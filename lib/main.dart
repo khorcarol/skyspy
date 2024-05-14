@@ -13,24 +13,24 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo2',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+          // This is the theme of your application.
+          //
+          // TRY THIS: Try running your application with "flutter run". You'll see
+          // the application has a purple toolbar. Then, without quitting the app,
+          // try changing the seedColor in the colorScheme below to Colors.green
+          // and then invoke "hot reload" (save your changes or press the "hot
+          // reload" button in a Flutter-supported IDE, or press "r" if you used
+          // the command line to start the app).
+          //
+          // Notice that the counter didn't reset back to zero; the application
+          // state is not lost during the reload. To reset the state, use hot
+          // restart instead.
+          //
+          // This works for code too, not just values: Most code changes can be
+          // tested with just a hot reload.
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+          fontFamily: "Karla"),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -78,42 +78,49 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       body: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                Color.fromRGBO(0, 0, 0, 1),
-                Color.fromRGBO(50, 42, 104, 1),
-                Color.fromRGBO(123, 85, 150, 1),
-                Color.fromRGBO(180, 126, 136, 1),
-                Color.fromRGBO(180, 126, 136, 1),
-              ])),
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+              Color.fromRGBO(0, 0, 0, 1),
+              Color.fromRGBO(50, 42, 104, 1),
+              Color.fromRGBO(123, 85, 150, 1),
+              Color.fromRGBO(180, 126, 136, 1),
+              Color.fromRGBO(180, 126, 136, 1),
+            ])),
+        child: AspectRatio(
+          aspectRatio: 9 / 16,
           child: Stack(
             children: [
-              // Image widget wrapped in a FittedBox to maintain aspect ratio
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'stargazing suitability',
-                    style: TextStyle(
-                      color: Colors.white, // Set text color as needed
-                      fontSize: 46, // Set font size as needed
-                    ),
+              const Padding(
+                padding: const EdgeInsets.only(top: 100.0),
+                child: const Center(
+                  child: const Column(
+                    children: [
+                      const Text(
+                        'stargazing suitability',
+                        style: TextStyle(
+                          color: Colors.white, // Set text color as needed
+                          fontSize: 20, // Set font size as needed
+                        ),
+                      ),
+                      const Text(
+                        '86%',
+                        style: TextStyle(
+                          color: Colors.white, // Set text color as needed
+                          fontSize: 70, // Set font size as needed
+                        ),
+                      ),
+                    ],
                   ),
-                  const Text(
-                    '86%',
-                    style: TextStyle(
-                      color: Colors.white, // Set text color as needed
-                      fontSize: 96, // Set font size as needed
-                    ),
-                  ),
-                  Image.asset('images/combined.png'),
-                ],
+                ),
               ),
+              Image.asset('images/combined.png'),
             ],
-          )),
+          ),
+        ),
+      ),
 
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
