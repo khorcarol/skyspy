@@ -77,35 +77,44 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
+      body: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                Color.fromRGBO(0, 0, 0, 1),
+                Color.fromRGBO(50, 42, 104, 1),
+                Color.fromRGBO(123, 85, 150, 1),
+                Color.fromRGBO(180, 126, 136, 1),
+                Color.fromRGBO(180, 126, 136, 1),
+              ])),
+          child: Stack(
+            children: [
+              // Image widget wrapped in a FittedBox to maintain aspect ratio
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'stargazing suitability',
+                    style: TextStyle(
+                      color: Colors.white, // Set text color as needed
+                      fontSize: 46, // Set font size as needed
+                    ),
+                  ),
+                  const Text(
+                    '86%',
+                    style: TextStyle(
+                      color: Colors.white, // Set text color as needed
+                      fontSize: 96, // Set font size as needed
+                    ),
+                  ),
+                  Image.asset('images/combined.png'),
+                ],
+              ),
+            ],
+          )),
+
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
