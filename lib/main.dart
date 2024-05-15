@@ -13,21 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo2',
       theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // TRY THIS: Try running your application with "flutter run". You'll see
-          // the application has a purple toolbar. Then, without quitting the app,
-          // try changing the seedColor in the colorScheme below to Colors.green
-          // and then invoke "hot reload" (save your changes or press the "hot
-          // reload" button in a Flutter-supported IDE, or press "r" if you used
-          // the command line to start the app).
-          //
-          // Notice that the counter didn't reset back to zero; the application
-          // state is not lost during the reload. To reset the state, use hot
-          // restart instead.
-          //
-          // This works for code too, not just values: Most code changes can be
-          // tested with just a hot reload.
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
           fontFamily: "Karla"),
@@ -89,44 +74,36 @@ class _MyHomePageState extends State<MyHomePage> {
               Color.fromRGBO(180, 126, 136, 1),
               Color.fromRGBO(180, 126, 136, 1),
             ])),
-        child: AspectRatio(
-          aspectRatio: 9 / 16,
-          child: Stack(
-            children: [
-              const Padding(
-                padding: const EdgeInsets.only(top: 100.0),
-                child: const Center(
-                  child: const Column(
-                    children: [
-                      const Text(
-                        'stargazing suitability',
-                        style: TextStyle(
-                          color: Colors.white, // Set text color as needed
-                          fontSize: 20, // Set font size as needed
-                        ),
-                      ),
-                      const Text(
-                        '86%',
-                        style: TextStyle(
-                          color: Colors.white, // Set text color as needed
-                          fontSize: 70, // Set font size as needed
-                        ),
-                      ),
-                    ],
+        child: Stack(children: [
+          const Padding(
+              padding: const EdgeInsets.only(top: 140.0),
+              child: const Center(
+                  child: const Column(children: [
+                const Text(
+                  'stargazing suitability',
+                  style: TextStyle(
+                    color: Colors.white, // Set text color as needed
+                    fontSize: 20, // Set font size as needed
                   ),
                 ),
-              ),
-              Image.asset('images/combined.png'),
-            ],
+                const Text(
+                  '86%',
+                  style: TextStyle(
+                    color: Colors.white, // Set text color as needed
+                    fontSize: 70, // Set font size as needed
+                  ),
+                ),
+              ]))),
+          FractionallySizedBox(
+            widthFactor: 1.0,
+            heightFactor: 1.0,
+            child: Container(
+              child: Image(
+                  image: AssetImage('images/combined.png'), fit: BoxFit.cover),
+            ),
           ),
-        ),
+        ]),
       ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
