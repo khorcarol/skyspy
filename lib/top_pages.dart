@@ -44,7 +44,6 @@ class _TopPagesState extends State<TopPages> with TickerProviderStateMixin{
         PageIndicator(
           tabController: _tabController,
           currentPageIndex: _currentPageIndex,
-          onUpdateCurrentPageIndex: _updateCurrentPageIndex,
         ),
       ]
     );
@@ -57,15 +56,6 @@ class _TopPagesState extends State<TopPages> with TickerProviderStateMixin{
       _currentPageIndex = currentPageIndex;
     });
   }
-
-  void _updateCurrentPageIndex(int index) {
-    _tabController.index = index;
-    _pageViewController.animateToPage(
-      index,
-      duration: const Duration(milliseconds: 400),
-      curve: Curves.easeInOut,
-    );
-  }
 }
 
 
@@ -73,13 +63,11 @@ class PageIndicator extends StatelessWidget {
   const PageIndicator({
     super.key,
     required this.tabController,
-    required this.currentPageIndex,
-    required this.onUpdateCurrentPageIndex,
+    required this.currentPageIndex
   });
 
   final int currentPageIndex;
   final TabController tabController;
-  final void Function(int) onUpdateCurrentPageIndex;
 
   @override
   Widget build(BuildContext context) {
