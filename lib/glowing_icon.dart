@@ -10,8 +10,9 @@ class GlowingIcon extends StatelessWidget {
     return Icon(
       icon,
       color: Colors.white,
+      size: 36.0,
       shadows: <Shadow>[
-        const Shadow(color: Colors.white, blurRadius: 15.0)
+        const Shadow(color: Color.fromRGBO(255, 255, 255, 0.5), blurRadius: 5.0)
       ]
     );
   }

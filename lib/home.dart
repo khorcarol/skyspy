@@ -32,15 +32,15 @@ class HomePage extends StatelessWidget {
                 Text(
                   'stargazing suitability',
                   style: TextStyle(
-                    color: Colors.white, // Set text color as needed
-                    fontSize: 20, // Set font size as needed
+                    color: Colors.white,
+                    fontSize: 20,
                   ),
                 ),
                 Text(
                   '86%',
                   style: TextStyle(
-                    color: Colors.white, // Set text color as needed
-                    fontSize: 70, // Set font size as needed
+                    color: Color.fromRGBO(255, 255, 255, 0.6),
+                    fontSize: 70,
                   ),
                 ),
               ])
