@@ -19,7 +19,10 @@ class MyApp extends StatelessWidget {
       title: 'SkySpy',
       scrollBehavior:  MyCustomScrollBehavior(), // allows drag to scroll on desktop/web
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.deepPurple,
+            brightness: Brightness.dark
+          ),
           useMaterial3: true,
           fontFamily: "Karla"),
       home: const Stack(
