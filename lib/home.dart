@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_font_icons/flutter_font_icons.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -45,18 +44,6 @@ class HomePage extends StatelessWidget {
             child: Image(
                   image: AssetImage('images/combined.png'), fit: BoxFit.cover),
           ),
-          Align(
-            alignment: Alignment(0.0, 0.75),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Icon(AntDesign.stepforward, color: Colors.white,),
-                Icon(Entypo.aircraft, color: Colors.white,),
-                Icon(EvilIcons.chevron_down, color: Colors.white,),
-                Icon(Feather.activity, color: Colors.white,),
-                Icon(FontAwesome.glass, color: Colors.white,),
-              ]),
-          )
         ]),
       ),
     );
