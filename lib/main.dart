@@ -49,35 +49,34 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget mainStack = const Stack(
-      children: <Widget>[
-        TopPages(),
-        Align(
-          alignment: Alignment(0.0, 0.75),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              GlowingIcon(icon: Icons.cloud_outlined),
-              GlowingIcon(icon: Icons.nightlight_outlined),
-              GlowingIcon(icon: Icons.expand_more_outlined),
-              GlowingIcon(icon: Icons.lightbulb_outlined),
-              GlowingIcon(icon: Icons.thermostat_outlined),
-            ]),
-        ),
-        Align(
-          alignment: Alignment(-0.8, -0.8),
-          child: GlowingIcon(icon: Icons.settings_outlined)
-        )
-      ]
-    );
-
     // doing things this way round so that the main stack
     // doesn't have to be rebuilt every time mode is changed!
     Widget filteredStack = Consumer<AppSettings>(
       builder: (context, settings, child) => ColorFiltered(
         colorFilter: settings.redMode ? redFilter : noFilter,
-        child: mainStack
-      )
+        child: child
+      ),
+      child: const Stack(
+        children: <Widget>[
+          TopPages(),
+          Align(
+            alignment: Alignment(0.0, 0.75),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                GlowingIcon(icon: Icons.cloud_outlined),
+                GlowingIcon(icon: Icons.nightlight_outlined),
+                GlowingIcon(icon: Icons.expand_more_outlined),
+                GlowingIcon(icon: Icons.lightbulb_outlined),
+                GlowingIcon(icon: Icons.thermostat_outlined),
+              ]),
+          ),
+          Align(
+            alignment: Alignment(-0.8, -0.8),
+            child: GlowingIcon(icon: Icons.settings_outlined)
+          )
+        ]
+      ),
     );
 
     return MaterialApp(
