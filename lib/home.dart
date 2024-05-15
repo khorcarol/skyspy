@@ -45,24 +45,18 @@ class HomePage extends StatelessWidget {
             child: Image(
                   image: AssetImage('images/combined.png'), fit: BoxFit.cover),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Icon(AntDesign.stepforward, color: Colors.white,),
-                      Icon(Entypo.aircraft),
-                      Icon(EvilIcons.chevron_down),
-                      Icon(Feather.activity),
-                      Icon(FontAwesome.glass),
-                    ]),
-              ),
-            ],
-          ),
+          Align(
+            alignment: Alignment(0.0, 0.75),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Icon(AntDesign.stepforward, color: Colors.white,),
+                Icon(Entypo.aircraft, color: Colors.white,),
+                Icon(EvilIcons.chevron_down, color: Colors.white,),
+                Icon(Feather.activity, color: Colors.white,),
+                Icon(FontAwesome.glass, color: Colors.white,),
+              ]),
+          )
         ]),
       ),
     );
