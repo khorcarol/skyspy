@@ -44,15 +44,8 @@ class AppSettings extends ChangeNotifier {
   }
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  
-  @override
-  State<StatefulWidget> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  bool _redMode = true;
 
   @override
   Widget build(BuildContext context) {
