@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_font_icons/flutter_font_icons.dart';
+import 'package:skyspy/glowing_icon.dart';
+// I think we can just use default Material icons tbh
+// import 'package:flutter_font_icons/flutter_font_icons.dart';
 
 import 'package:skyspy/home.dart';
 import 'package:skyspy/maps.dart';
+import 'package:skyspy/glowing_icon.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,11 +30,11 @@ class MyApp extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Icon(AntDesign.stepforward, color: Colors.white,),
-                Icon(Entypo.aircraft, color: Colors.white,),
-                Icon(EvilIcons.chevron_down, color: Colors.white,),
-                Icon(Feather.activity, color: Colors.white,),
-                Icon(FontAwesome.glass, color: Colors.white,),
+                GlowingIcon(icon: Icons.cloud_outlined),
+                GlowingIcon(icon: Icons.nightlight_outlined),
+                GlowingIcon(icon: Icons.expand_more_outlined),
+                GlowingIcon(icon: Icons.lightbulb_outlined),
+                GlowingIcon(icon: Icons.thermostat_outlined),
               ]),
           )
         ]
