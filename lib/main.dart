@@ -42,6 +42,10 @@ class AppSettings extends ChangeNotifier {
       notifyListeners();
     }
   }
+  void toggleRedMode() {
+    _redMode = !_redMode;
+    notifyListeners();
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -50,16 +54,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // doing things this way round so that the main stack
-    // doesn't have to be rebuilt every time mode is changed!
+    // doesn't have to be rebuilt every time colour mode is changed!
     Widget filteredStack = Consumer<AppSettings>(
       builder: (context, settings, child) => ColorFiltered(
         colorFilter: settings.redMode ? redFilter : noFilter,
         child: child
       ),
-      child: const Stack(
+      child: Stack(
         children: <Widget>[
-          TopPages(),
-          Align(
+          const TopPages(),
+          const Align(
             alignment: Alignment(0.0, 0.75),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -69,11 +73,22 @@ class MyApp extends StatelessWidget {
                 GlowingIcon(icon: Icons.expand_more_outlined),
                 GlowingIcon(icon: Icons.lightbulb_outlined),
                 GlowingIcon(icon: Icons.thermostat_outlined),
-              ]),
+              ]
+            ),
           ),
           Align(
-            alignment: Alignment(-0.8, -0.8),
-            child: GlowingIcon(icon: Icons.settings_outlined)
+            alignment: const Alignment(-0.8, -0.8),
+            child: IconButton(
+              icon: const Icon(
+                Icons.settings_outlined,
+                color: Colors.white,
+                size: 36.0,
+                shadows: <Shadow>[
+                  Shadow(color: Color.fromRGBO(255, 255, 255, 0.5), blurRadius: 5.0)
+                ]
+              ),
+              onPressed: Provider.of<AppSettings>(context, listen: false).toggleRedMode
+            ),
           )
         ]
       ),
