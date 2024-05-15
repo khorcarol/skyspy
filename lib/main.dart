@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 // I think we can just use default Material icons tbh
 // import 'package:flutter_font_icons/flutter_font_icons.dart';
 
@@ -8,7 +9,14 @@ import 'package:skyspy/glowing_icon.dart';
 
 // current values adapted from Flutter docs
 // https://api.flutter.dev/flutter/dart-ui/ColorFilter/ColorFilter.matrix.html
-const ColorFilter redScale = ColorFilter.matrix(<double>[
+const ColorFilter noFilter = ColorFilter.matrix(<double>[
+  1, 0, 0, 0, 0,
+  0, 1, 0, 0, 0,
+  0, 0, 1, 0, 0,
+  0, 0, 0, 1, 0,
+]);
+
+const ColorFilter redFilter = ColorFilter.matrix(<double>[
   0.2126, 0.7152, 0.0722, 0, 0,
   0,      0,      0,      0, 0,
   0,      0,      0,      0, 0,
@@ -16,7 +24,24 @@ const ColorFilter redScale = ColorFilter.matrix(<double>[
 ]);
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => AppSettings(),
+      child: const MyApp()
+    )
+  );
+}
+
+class AppSettings extends ChangeNotifier {
+  // TODO: figure out how to do this nicer?
+  bool _redMode = false;
+  bool get redMode => _redMode;
+  set redMode(bool value) {
+    if (_redMode != value) {
+      _redMode = value;
+      notifyListeners();
+    }
+  }
 }
 
 class MyApp extends StatefulWidget {
@@ -53,12 +78,14 @@ class _MyAppState extends State<MyApp> {
       ]
     );
 
-    if (_redMode) {
-      mainStack = ColorFiltered(
-        colorFilter: redScale,
-        child: mainStack,
-      );
-    }
+    // doing things this way round so that the main stack
+    // doesn't have to be rebuilt every time mode is changed!
+    Widget filteredStack = Consumer<AppSettings>(
+      builder: (context, settings, child) => ColorFiltered(
+        colorFilter: settings.redMode ? redFilter : noFilter,
+        child: mainStack
+      )
+    );
 
     return MaterialApp(
       title: 'SkySpy',
@@ -70,7 +97,7 @@ class _MyAppState extends State<MyApp> {
           ),
           useMaterial3: true,
           fontFamily: "Karla"),
-      home: mainStack
+      home: filteredStack
     );
   }
 }
