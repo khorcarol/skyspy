@@ -17,8 +17,8 @@ class _TopPagesState extends State<TopPages> with TickerProviderStateMixin{
   @override
   void initState() {
     super.initState();
-    _pageViewController = PageController();
-    _tabController = TabController(length: 2, vsync: this);
+    _pageViewController = PageController(initialPage: 1);
+    _tabController = TabController(initialIndex: 1, length: 3, vsync: this);
   }
 
   @override
@@ -37,6 +37,7 @@ class _TopPagesState extends State<TopPages> with TickerProviderStateMixin{
           controller: _pageViewController,
           onPageChanged: _handlePageViewChanged,
           children: <Widget>[
+            const MapPage(),
             const HomePage(),
             const MapPage()
           ]
