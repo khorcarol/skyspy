@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_font_icons/flutter_font_icons.dart';
 
 void main() {
   runApp(const MyApp());
@@ -101,6 +102,24 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Image(
                   image: AssetImage('images/combined.png'), fit: BoxFit.cover),
             ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Icon(AntDesign.stepforward, color: Colors.white,),
+                      Icon(Entypo.aircraft),
+                      Icon(EvilIcons.chevron_down),
+                      Icon(Feather.activity),
+                      Icon(FontAwesome.glass),
+                    ]),
+              ),
+            ],
           ),
         ]),
       ),
