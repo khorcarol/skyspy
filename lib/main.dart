@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:skyspy/home.dart';
+import 'package:skyspy/maps.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
           fontFamily: "Karla"),
-      home: const HomePage(), // CHANGE THIS LINE TO QUICKLY TEST DIFFERENT PAGES
+      home: const MapPage(), // CHANGE THIS LINE TO QUICKLY TEST DIFFERENT PAGES
     );
   }
 }
