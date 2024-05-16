@@ -95,22 +95,7 @@ class MyApp extends StatelessWidget {
       ]),
     );
 
-<<<<<<< HEAD
-    return MaterialApp(
-      title: 'SkySpy',
-      scrollBehavior: MyCustomScrollBehavior(),
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.deepPurple, // Adjust primary color here
-          brightness: Brightness.dark,
-        ),
-        fontFamily: "Karla",
-      ),
-      home: Scaffold(body: filteredStack),
-    );
-=======
     return Scaffold(body: filteredStack);
->>>>>>> 65c23c46aa4321fa7f76accb5cd9b8b97ebd3c69
   }
 }
 
