@@ -9,7 +9,7 @@ class MapPage extends StatelessWidget {
     return Scaffold(
         body: InteractiveViewer(
       
-      boundaryMargin: EdgeInsets.all(100),
+      boundaryMargin: const EdgeInsets.all(100),
       minScale: 1,
       maxScale: 2,
       child: FractionallySizedBox(
