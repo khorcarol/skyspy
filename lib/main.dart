@@ -73,7 +73,7 @@ class AppSettings extends ChangeNotifier {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
       child: Stack(children: <Widget>[
         const TopPages(),
         const Align(
-          alignment: Alignment(0.0, 0.80),
+          alignment: Alignment(0.0, 0.9),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -121,7 +121,7 @@ class MyApp extends StatelessWidget {
       scrollBehavior: MyCustomScrollBehavior(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.deepPurple,
+          primarySwatch: Colors.deepPurple, // Adjust primary color here
           brightness: Brightness.dark,
         ),
         fontFamily: "Karla",
