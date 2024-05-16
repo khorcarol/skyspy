@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:skyspy/glowing_icon.dart';
 import 'package:skyspy/home.dart';
 import 'package:skyspy/maps.dart';
 import 'package:skyspy/widgets.dart';
@@ -41,6 +42,18 @@ class _TopPagesState extends State<TopPages> with TickerProviderStateMixin {
             const HomePage(),
             const MapPage()
           ]),
+      const Align(
+        alignment: Alignment(0.0, 0.9),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            GlowingIcon(icon: Icons.cloud_outlined),
+            GlowingIcon(icon: Icons.nightlight_outlined),
+            GlowingIcon(icon: Icons.keyboard_arrow_up_outlined),
+            GlowingIcon(icon: Icons.lightbulb_outlined),
+            GlowingIcon(icon: Icons.thermostat_outlined),
+        ]),
+      ),
       PageIndicator(
         tabController: _tabController,
         currentPageIndex: _currentPageIndex,

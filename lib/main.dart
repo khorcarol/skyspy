@@ -93,18 +93,6 @@ class MyApp extends StatelessWidget {
           colorFilter: settings.redMode ? redFilter : noFilter, child: child),
       child: Stack(children: <Widget>[
         const VerticalPages(),
-        const Align(
-          alignment: Alignment(0.0, 0.9),
-          child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                GlowingIcon(icon: Icons.cloud_outlined),
-                GlowingIcon(icon: Icons.nightlight_outlined),
-                GlowingIcon(icon: Icons.expand_more_outlined),
-                GlowingIcon(icon: Icons.lightbulb_outlined),
-                GlowingIcon(icon: Icons.thermostat_outlined),
-              ]),
-        ),
         Positioned(
           top: 50.0,
           right: 20.0,
