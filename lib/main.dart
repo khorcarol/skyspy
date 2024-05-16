@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:weather/weather.dart';
+
 import 'package:skyspy/vertical_pages.dart';
 import 'package:skyspy/top_pages.dart';
 import 'package:skyspy/settings.dart';
@@ -53,12 +55,15 @@ const ColorFilter redFilter = ColorFilter.matrix(<double>[
 ]);
 
 void main() {
-  runApp(ChangeNotifierProvider(
-      create: (context) => AppSettings(),
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => AppSettings()),
+        ChangeNotifierProvider(create: (context) => WeatherData()),
+      ],
       child: MaterialApp(
           title: 'SkySpy',
-          scrollBehavior:
-              MyCustomScrollBehavior(), // allows drag to scroll on desktop/web
+          scrollBehavior: MyCustomScrollBehavior(), // allows drag to scroll on desktop/web
           theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(
                   seedColor: Colors.deepPurple, brightness: Brightness.dark),
@@ -83,6 +88,22 @@ class AppSettings extends ChangeNotifier {
   }
 }
 
+class WeatherData extends ChangeNotifier {
+  String key = "e43370b37615967700311d81c1fbc5e4";
+  late WeatherFactory ws;
+  Weather? data;
+
+  WeatherData() {
+    ws = WeatherFactory(key);
+    queryWeather();
+  }
+  
+  void queryWeather() async {
+    data = await ws.currentWeatherByLocation(35, 0); // TODO: change coords
+    notifyListeners();
+  }
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -96,18 +117,27 @@ class MyApp extends StatelessWidget {
         Positioned(
           top: 50.0,
           right: 20.0,
-          child: Padding(
-              padding: const EdgeInsets.all(0.0),
-              child: IconButton(
-                  icon: const GlowingIcon(icon: Icons.settings_outlined),
-                  iconSize: 36.0,
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SettingsPage()),
-                    );
-                  })),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(
+                icon: const GlowingIcon(icon: Icons.refresh_outlined),
+                iconSize: 36.0,
+                onPressed: Provider.of<WeatherData>(context, listen: false).queryWeather
+              ),
+              IconButton(
+                icon: const GlowingIcon(icon: Icons.settings_outlined),
+                iconSize: 36.0,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SettingsPage()),
+                  );
+                }
+              ),
+            ],
+          )
         )
       ]),
     );
