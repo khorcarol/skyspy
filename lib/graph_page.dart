@@ -56,8 +56,8 @@ class GraphPage extends StatelessWidget {
           ),
           Padding(
               padding: EdgeInsets.only(left: 0.05 * width, right: 0.05 * width),
-              child: const Align(
-                alignment: Alignment(0, -0.3),
+              child: Align(
+                alignment: const Alignment(0, -0.3),
                 child: StargazingChart(),
               )),
           Padding(
@@ -78,8 +78,8 @@ class GraphPage extends StatelessWidget {
           ),
           Padding(
               padding: EdgeInsets.only(left: 0.05 * width, right: 0.05 * width),
-              child: const Align(
-                alignment: Alignment(0, 0.1),
+              child: Align(
+                alignment: const Alignment(0, 0.1),
                 child: MoonlightChart(),
               )),
           Padding(
@@ -100,8 +100,8 @@ class GraphPage extends StatelessWidget {
           ),
           Padding(
               padding: EdgeInsets.only(left: 0.05 * width, right: 0.05 * width),
-              child: const Align(
-                alignment: Alignment(0, 0.5),
+              child: Align(
+                alignment: const Alignment(0, 0.5),
                 child: WindChart(),
               )),
           Padding(
@@ -122,8 +122,8 @@ class GraphPage extends StatelessWidget {
           ),
           Padding(
               padding: EdgeInsets.only(left: 0.05 * width, right: 0.05 * width),
-              child: const Align(
-                alignment: Alignment(0, 0.92),
+              child: Align(
+                alignment: const Alignment(0, 0.92),
                 child: LightChart(),
               )),
         ]),
