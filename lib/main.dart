@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
       child: Stack(children: <Widget>[
         const TopPages(),
         const Align(
-          alignment: Alignment(0.0, 0.75),
+          alignment: Alignment(0.0, 0.80),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
