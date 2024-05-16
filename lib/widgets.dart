@@ -20,9 +20,6 @@ class _WidgetPageState extends State<WidgetPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Current Status'),
-      ),
       body: GridView.builder(
         padding: const EdgeInsets.all(8),
         itemCount: 6,
