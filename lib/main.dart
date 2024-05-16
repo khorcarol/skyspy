@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:skyspy/top_pages.dart';
+import 'package:skyspy/vertical_pages.dart';
 import 'package:skyspy/settings.dart';
 import 'package:skyspy/glowing_icon.dart';
 
@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
       builder: (context, settings, child) => ColorFiltered(
           colorFilter: settings.redMode ? redFilter : noFilter, child: child),
       child: Stack(children: <Widget>[
-        const TopPages(),
+        const VerticalPages(),
         const Align(
           alignment: Alignment(0.0, 0.80),
           child: Row(
