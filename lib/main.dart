@@ -101,19 +101,22 @@ class MyApp extends StatelessWidget {
                 GlowingIcon(icon: Icons.thermostat_outlined),
               ]),
         ),
-        Align(
-          alignment: const Alignment(-0.8, -0.8),
-          child: IconButton(
-              icon: const Icon(Icons.settings_outlined,
-                  color: Colors.white,
-                  size: 36.0,
-                  shadows: <Shadow>[
-                    Shadow(
-                        color: Color.fromRGBO(255, 255, 255, 0.5),
-                        blurRadius: 5.0)
-                  ]),
-              onPressed: Provider.of<AppSettings>(context, listen: false)
-                  .toggleRedMode),
+        Positioned(
+          top: 50.0,
+          right: 20.0,
+          child: Padding(
+              padding: const EdgeInsets.all(0.0),
+              child: IconButton(
+                  icon: const Icon(Icons.settings_outlined,
+                      color: Colors.white,
+                      size: 36.0,
+                      shadows: <Shadow>[
+                        Shadow(
+                            color: Color.fromRGBO(255, 255, 255, 0.5),
+                            blurRadius: 5.0)
+                      ]),
+                  onPressed: Provider.of<AppSettings>(context, listen: false)
+                      .toggleRedMode)),
         )
       ]),
     );

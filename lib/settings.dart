@@ -7,12 +7,12 @@ class CustomSwitchCard extends StatelessWidget {
   final Function(bool)? onChanged;
 
   const CustomSwitchCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.description,
     required this.switchValue,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
