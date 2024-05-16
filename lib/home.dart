@@ -38,13 +38,11 @@ class HomePage extends StatelessWidget {
                     fontSize: 20,
                   ),
                 ),
-                Consumer<WeatherData>(
-                  builder: (context, weather, child) => Text(
-                    weather.data?.tempMax?.celsius?.toInt().toString() ?? "...",
-                    style: const TextStyle(
-                      color: Color.fromRGBO(255, 255, 255, 0.6),
-                      fontSize: 70,
-                    )
+                Text(
+                  Provider.of<WeatherData>(context).data?.tempMax?.celsius?.toInt().toString() ?? "...",
+                  style: const TextStyle(
+                    color: Color.fromRGBO(255, 255, 255, 0.6),
+                    fontSize: 70,
                   )
                 )
               ])

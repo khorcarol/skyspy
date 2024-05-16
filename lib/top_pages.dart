@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:skyspy/main.dart';
 
 import 'package:skyspy/glowing_icon.dart';
 import 'package:skyspy/home.dart';
@@ -42,16 +44,48 @@ class _TopPagesState extends State<TopPages> with TickerProviderStateMixin {
             const HomePage(),
             const MapPage()
           ]),
-      const Align(
-        alignment: Alignment(0.0, 0.9),
+      Align(
+        alignment: const Alignment(0.0, 0.9),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            GlowingIcon(icon: Icons.cloud_outlined),
-            GlowingIcon(icon: Icons.nightlight_outlined),
-            GlowingIcon(icon: Icons.keyboard_arrow_up_outlined),
-            GlowingIcon(icon: Icons.lightbulb_outlined),
-            GlowingIcon(icon: Icons.thermostat_outlined),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const GlowingIcon(icon: Icons.cloud_outlined),
+                Text(
+                  Provider.of<WeatherData>(context).data?.cloudiness?.toInt().toString() ?? "...",
+                )
+              ]
+            ),
+            const Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                GlowingIcon(icon: Icons.nightlight_outlined),
+                Text(
+                  "25"
+                )
+              ]
+            ),
+            const GlowingIcon(icon: Icons.keyboard_arrow_up_outlined),
+            const Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                GlowingIcon(icon: Icons.lightbulb_outlined),
+                Text(
+                  "67"
+                )
+              ]
+            ),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const GlowingIcon(icon: Icons.thermostat_outlined),
+                Text(
+                  Provider.of<WeatherData>(context).data?.temperature?.celsius?.toInt().toString() ?? "...",
+                )
+              ]
+            ),
         ]),
       ),
       PageIndicator(

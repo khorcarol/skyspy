@@ -41,6 +41,8 @@ dependencies:
     git:
       url: https://github.com/Taxman42/weather_charts.git
       path: charts_flutter
+  zoom_widget: ^2.0.1
+  weather: ^3.1.1
   
 
 dev_dependencies:

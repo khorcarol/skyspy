@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:weather/weather.dart';
 
 import 'package:skyspy/vertical_pages.dart';
-import 'package:skyspy/top_pages.dart';
 import 'package:skyspy/settings.dart';
 import 'package:skyspy/glowing_icon.dart';
 
@@ -99,7 +98,7 @@ class WeatherData extends ChangeNotifier {
   }
   
   void queryWeather() async {
-    data = await ws.currentWeatherByLocation(35, 0); // TODO: change coords
+    data = await ws.currentWeatherByLocation(55, 0); // TODO: change coords
     notifyListeners();
   }
 }

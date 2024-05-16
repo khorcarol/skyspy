@@ -38,8 +38,8 @@ packages:
     description:
       path: charts_flutter
       ref: HEAD
-      resolved-ref: fcd0c524ac573ae4d0b79f3bdd6491fbbcdbfb61
-      url: "https://github.com/google/charts.git"
+      resolved-ref: a8c3f4d132a165b6f6370ad7c323954e34e8cee3
+      url: "https://github.com/Taxman42/weather_charts.git"
     source: git
     version: "0.12.0"
   clock:
@@ -273,7 +273,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.2"
-    version: "0.7.0"
   vector_math:
     dependency: transitive
     description:
@@ -286,10 +285,34 @@ packages:
     dependency: transitive
     description:
       name: vm_service
-      sha256: "3923c89304b715fb1eb6423f017651664a03bf5f4b29983627c4da791f74a4ec"
+      sha256: b3d56ff4341b8f182b96aceb2fa20e3dcb336b9f867bc0eafc0de10f1048e957
       url: "https://pub.dev"
     source: hosted
-    version: "14.2.1"
+    version: "13.0.0"
+  weather:
+    dependency: "direct main"
+    description:
+      name: weather
+      sha256: "5ad1d5b77051aa524049fc0abf1076ac4533e91e0176b0a4bab1182a2d6f921b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.1"
+  web:
+    dependency: transitive
+    description:
+      name: web
+      sha256: "97da13628db363c635202ad97068d47c5b8aa555808e7a9411963c533b449b27"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.1"
+  zoom_widget:
+    dependency: "direct main"
+    description:
+      name: zoom_widget
+      sha256: "50fbaa460ffc938ca14c0077f8c9e5968c437897242d7f552dacff1bf3270225"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.1"
 sdks:
   dart: ">=3.3.4 <4.0.0"
-  flutter: ">=1.20.0"
+  flutter: ">=2.5.0"
