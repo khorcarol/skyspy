@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:skyspy/main.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -19,30 +21,32 @@ class HomePage extends StatelessWidget {
               Color.fromRGBO(180, 126, 136, 1),
             ]
           )),
-        child: const Stack(children: [
-          FractionallySizedBox(
+        child: Stack(children: [
+          const FractionallySizedBox(
             widthFactor: 1.0,
             heightFactor: 1.0,
             child: Image(image: AssetImage('images/combined.png'), fit: BoxFit.cover),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 140.0),
+            padding: const EdgeInsets.only(top: 140.0),
             child: Center(
               child: Column(children: [
-                Text(
+                const Text(
                   'stargazing suitability',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                   ),
                 ),
-                Text(
-                  '86%',
-                  style: TextStyle(
-                    color: Color.fromRGBO(255, 255, 255, 0.6),
-                    fontSize: 70,
-                  ),
-                ),
+                Consumer<WeatherData>(
+                  builder: (context, weather, child) => Text(
+                    weather.data?.tempMax?.celsius?.toInt().toString() ?? "...",
+                    style: const TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 0.6),
+                      fontSize: 70,
+                    )
+                  )
+                )
               ])
             )
           ),
