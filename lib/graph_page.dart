@@ -45,7 +45,7 @@ class GraphPage extends StatelessWidget {
               child: const Row(
                 children: <Widget>[
                   Icon(
-                    WeatherIcons.wind,
+                    Icons.auto_awesome_outlined,
                     color: Colors.grey,
                   ),
                   SizedBox(width: 10),
