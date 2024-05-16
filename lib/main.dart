@@ -3,57 +3,38 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:skyspy/top_pages.dart';
+import 'package:skyspy/settings.dart';
 import 'package:skyspy/glowing_icon.dart';
 
 const ColorFilter noFilter = ColorFilter.matrix(<double>[
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1,
-  0,
+  1, 0, 0, 0, 0,
+  0, 1, 0, 0, 0,
+  0, 0, 1, 0, 0,
+  0, 0, 0, 1, 0,
 ]);
 
 const ColorFilter redFilter = ColorFilter.matrix(<double>[
-  0.2126,
-  0.7152,
-  0.0722,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1,
-  0,
+  0.2126, 0.7152, 0.0722, 0, 0,
+  0,      0,      0,      0, 0,
+  0,      0,      0,      0, 0,
+  0,      0,      0,      1, 0,
 ]);
 
 void main() {
   runApp(ChangeNotifierProvider(
-      create: (context) => AppSettings(), child: const MyApp()));
+      create: (context) => AppSettings(),
+      child: MaterialApp(
+        title: 'SkySpy',
+        scrollBehavior: MyCustomScrollBehavior(), // allows drag to scroll on desktop/web
+        theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+                seedColor: Colors.deepPurple, brightness: Brightness.dark),
+            useMaterial3: true,
+            fontFamily: "Karla"),
+        home: const MyApp()
+      )
+    )
+  );
 }
 
 class AppSettings extends ChangeNotifier {
@@ -98,24 +79,23 @@ class MyApp extends StatelessWidget {
           top: 50.0,
           right: 20.0,
           child: Padding(
-              padding: const EdgeInsets.all(0.0),
-              child: IconButton(
-                  icon: const Icon(Icons.settings_outlined,
-                      color: Colors.white,
-                      size: 36.0,
-                      shadows: <Shadow>[
-                        Shadow(
-                            color: Color.fromRGBO(255, 255, 255, 0.5),
-                            blurRadius: 5.0)
-                      ]),
-                  onPressed: () {
-                    Provider.of<AppSettings>(context, listen: false)
-                        .toggleRedMode();
-                  })),
+            padding: const EdgeInsets.all(0.0),
+            child: IconButton(
+              icon: const GlowingIcon(icon: Icons.settings_outlined),
+              iconSize: 36.0,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SettingsPage()),
+                );
+              }
+            )
+          ),
         )
       ]),
     );
 
+<<<<<<< HEAD
     return MaterialApp(
       title: 'SkySpy',
       scrollBehavior: MyCustomScrollBehavior(),
@@ -128,6 +108,9 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(body: filteredStack),
     );
+=======
+    return Scaffold(body: filteredStack);
+>>>>>>> 65c23c46aa4321fa7f76accb5cd9b8b97ebd3c69
   }
 }
 
