@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zoom_widget/zoom_widget.dart';
 
 class MapPage extends StatelessWidget {
   const MapPage({super.key});
@@ -8,8 +7,7 @@ class MapPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: InteractiveViewer(
-      
-      boundaryMargin: EdgeInsets.all(100),
+      boundaryMargin: const EdgeInsets.all(100),
       minScale: 1,
       maxScale: 2,
       child: FractionallySizedBox(
