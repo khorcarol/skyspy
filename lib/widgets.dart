@@ -21,7 +21,7 @@ class _WidgetPageState extends State<WidgetPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(''),
+        title: const Text('.'),
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(8),
