@@ -47,18 +47,18 @@ class CustomSwitchCard extends StatelessWidget {
                 ),
               ),
               Align(
-                alignment: Alignment.bottomLeft, child:
-              FittedBox(
-                fit: BoxFit.fitWidth,
-                child: Text(
-                  description,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                    fontFamily: "Raleway",
-                  ),
-                ),
-              ))
+                  alignment: Alignment.bottomLeft,
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text(
+                      description,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        fontFamily: "Raleway",
+                      ),
+                    ),
+                  ))
             ],
           ),
         ),
