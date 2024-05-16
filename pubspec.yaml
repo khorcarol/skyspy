@@ -89,6 +89,9 @@ flutter:
       fonts:
         - asset: fonts/Raleway-Bold.ttf
 
+    - family: WeatherIcons
+      fonts:
+      - asset: fonts/WeatherIcons.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
