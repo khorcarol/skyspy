@@ -15,7 +15,7 @@ class MapPage extends StatelessWidget {
       child: FractionallySizedBox(
           widthFactor: 1.0,
           heightFactor: 1.0,
-          child: Image.asset("images/Map.png", fit: BoxFit.cover)),
+          child: Image.asset("images/map.png", fit: BoxFit.cover)),
     ));
   }
 }
