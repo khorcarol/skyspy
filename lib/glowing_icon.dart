@@ -7,13 +7,8 @@ class GlowingIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Icon(
-      icon,
-      color: Colors.white,
-      size: 36.0,
-      shadows: <Shadow>[
-        const Shadow(color: Color.fromRGBO(255, 255, 255, 0.5), blurRadius: 5.0)
-      ]
-    );
+    return Icon(icon, color: Colors.white, size: 36.0, shadows: <Shadow>[
+      const Shadow(color: Color.fromRGBO(255, 255, 255, 0.5), blurRadius: 5.0)
+    ]);
   }
 }

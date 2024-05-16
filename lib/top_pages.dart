@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+
 import 'package:skyspy/home.dart';
 import 'package:skyspy/maps.dart';
+import 'package:skyspy/widgets.dart';
 
 class TopPages extends StatefulWidget {
   const TopPages({super.key});
 
   @override
-  State<StatefulWidget> createState()  => _TopPagesState();
+  State<StatefulWidget> createState() => _TopPagesState();
 }
 
-class _TopPagesState extends State<TopPages> with TickerProviderStateMixin{
+class _TopPagesState extends State<TopPages> with TickerProviderStateMixin {
   late PageController _pageViewController;
   late TabController _tabController;
   int _currentPageIndex = 0;
@@ -30,27 +32,22 @@ class _TopPagesState extends State<TopPages> with TickerProviderStateMixin{
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment:  Alignment.bottomCenter,
-      children: <Widget>[
-        PageView(
+    return Stack(alignment: Alignment.bottomCenter, children: <Widget>[
+      PageView(
           controller: _pageViewController,
           onPageChanged: _handlePageViewChanged,
           children: <Widget>[
-            const MapPage(),
+            const WidgetPage(),
             const HomePage(),
             const MapPage()
-          ]
-        ),
-        PageIndicator(
-          tabController: _tabController,
-          currentPageIndex: _currentPageIndex,
-        ),
-      ]
-    );
+          ]),
+      PageIndicator(
+        tabController: _tabController,
+        currentPageIndex: _currentPageIndex,
+      ),
+    ]);
   }
 
-  
   void _handlePageViewChanged(int currentPageIndex) {
     _tabController.index = currentPageIndex;
     setState(() {
@@ -59,13 +56,9 @@ class _TopPagesState extends State<TopPages> with TickerProviderStateMixin{
   }
 }
 
-
 class PageIndicator extends StatelessWidget {
-  const PageIndicator({
-    super.key,
-    required this.tabController,
-    required this.currentPageIndex
-  });
+  const PageIndicator(
+      {super.key, required this.tabController, required this.currentPageIndex});
 
   final int currentPageIndex;
   final TabController tabController;
