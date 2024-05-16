@@ -46,6 +46,8 @@ class WindChart extends StatelessWidget {
     ),
   ];
 
+  const WindChart({super.key});
+
   // SubscriberChart({required this.data});
 
   @override

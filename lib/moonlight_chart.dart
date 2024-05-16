@@ -46,6 +46,8 @@ class MoonlightChart extends StatelessWidget {
     ),
   ];
 
+  const MoonlightChart({super.key});
+
   // SubscriberChart({required this.data});
 
   @override

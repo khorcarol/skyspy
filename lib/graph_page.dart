@@ -31,7 +31,7 @@ class GraphPage extends StatelessWidget {
               padding: EdgeInsets.only(left: 0.05 * width),
               child: Container(
                 alignment: const Alignment(0, -0.9),
-                child: Row(
+                child: const Row(
                   children: <Widget>[
                     DefaultTextStyleExample(fontsize: 40, boldBool: true, input: "tonight")
                   ],
@@ -42,10 +42,10 @@ class GraphPage extends StatelessWidget {
               padding: EdgeInsets.all(0.05 * width),
               child: Container(
                 alignment: const Alignment(0, -0.5),
-                child: Row(
+                child: const Row(
                   children: <Widget>[
-                    const Icon(WeatherIcons.wind, color: Colors.grey,),
-                    const SizedBox(width: 10),
+                    Icon(WeatherIcons.wind, color: Colors.grey,),
+                    SizedBox(width: 10),
                     DefaultTextStyleExample(input: "stargazing index")
                   ],
                 ),
@@ -53,8 +53,8 @@ class GraphPage extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(left: 0.05 * width, right: 0.05 * width),
-              child: Align(
-                alignment: const Alignment(0, -0.3),
+              child: const Align(
+                alignment: Alignment(0, -0.3),
                 child: StargazingChart(),
               )
             ),
@@ -62,10 +62,10 @@ class GraphPage extends StatelessWidget {
               padding: EdgeInsets.all(0.05 * width),
               child: Container(
                 alignment: const Alignment(0, -0.1),
-                child: Row(
+                child: const Row(
                   children: <Widget>[
-                    const Icon(WeatherIcons.moon_1, color: Colors.grey,),
-                    const SizedBox(width: 10),
+                    Icon(WeatherIcons.moon_1, color: Colors.grey,),
+                    SizedBox(width: 10),
                     DefaultTextStyleExample(input: "moonlight")
                   ],
                 ),
@@ -73,8 +73,8 @@ class GraphPage extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(left: 0.05 * width, right: 0.05 * width),
-              child: Align(
-                alignment: const Alignment(0, 0.1),
+              child: const Align(
+                alignment: Alignment(0, 0.1),
                 child: MoonlightChart(),
               )
             ),
@@ -82,10 +82,10 @@ class GraphPage extends StatelessWidget {
               padding: EdgeInsets.all(0.05 * width),
               child: Container(
                 alignment: const Alignment(0, 0.3),
-                child: Row(
+                child: const Row(
                   children: <Widget>[
-                    const Icon(WeatherIcons.wind, color: Colors.grey,),
-                    const SizedBox(width: 10),
+                    Icon(WeatherIcons.wind, color: Colors.grey,),
+                    SizedBox(width: 10),
                     DefaultTextStyleExample(input: "wind speed (kph)")
                   ],
                 ),
@@ -93,8 +93,8 @@ class GraphPage extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(left: 0.05 * width, right: 0.05 * width),
-              child: Align(
-                alignment: const Alignment(0, 0.5),
+              child: const Align(
+                alignment: Alignment(0, 0.5),
                 child: WindChart(),
               )
             ),
@@ -102,10 +102,10 @@ class GraphPage extends StatelessWidget {
               padding: EdgeInsets.all(0.05 * width),
               child: Container(
                 alignment: const Alignment(0, 0.7),
-                child: Row(
+                child: const Row(
                   children: <Widget>[
-                    const Icon(WeatherIcons.lamp, color: Colors.grey,),
-                    const SizedBox(width: 10),
+                    Icon(WeatherIcons.lamp, color: Colors.grey,),
+                    SizedBox(width: 10),
                     DefaultTextStyleExample(input: "light pollution (%)")
                   ],
                 ),
@@ -113,8 +113,8 @@ class GraphPage extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(left: 0.05 * width, right: 0.05 * width),
-              child: Align(
-                alignment: const Alignment(0, 0.92),
+              child: const Align(
+                alignment: Alignment(0, 0.92),
                 child: LightChart(),
               )
             ),

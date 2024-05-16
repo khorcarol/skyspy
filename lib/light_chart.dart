@@ -46,6 +46,8 @@ class LightChart extends StatelessWidget {
     ),
   ];
 
+  const LightChart({super.key});
+
   // SubscriberChart({required this.data});
 
   @override

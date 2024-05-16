@@ -8,7 +8,7 @@ class DefaultTextStyleExample extends StatelessWidget {
   final bool boldBool;
 
 
-  DefaultTextStyleExample({this.fontsize = 16, this.boldBool = false, required this.input});
+  const DefaultTextStyleExample({super.key, this.fontsize = 16, this.boldBool = false, required this.input});
 
   @override
   Widget build(BuildContext context) {

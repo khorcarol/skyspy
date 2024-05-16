@@ -54,7 +54,7 @@ class AppSettings extends ChangeNotifier {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
       child: Stack(children: <Widget>[
         const VerticalPages(),
         const Align(
-          alignment: Alignment(0.0, 0.80),
+          alignment: Alignment(0.0, 0.9),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -95,7 +95,22 @@ class MyApp extends StatelessWidget {
       ]),
     );
 
+<<<<<<< HEAD
+    return MaterialApp(
+      title: 'SkySpy',
+      scrollBehavior: MyCustomScrollBehavior(),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.deepPurple, // Adjust primary color here
+          brightness: Brightness.dark,
+        ),
+        fontFamily: "Karla",
+      ),
+      home: Scaffold(body: filteredStack),
+    );
+=======
     return Scaffold(body: filteredStack);
+>>>>>>> 65c23c46aa4321fa7f76accb5cd9b8b97ebd3c69
   }
 }
 

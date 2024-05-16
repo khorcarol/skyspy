@@ -46,6 +46,8 @@ class StargazingChart extends StatelessWidget {
     ),
   ];
 
+  const StargazingChart({super.key});
+
   // SubscriberChart({required this.data});
 
   @override
