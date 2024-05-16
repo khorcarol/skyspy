@@ -46,7 +46,7 @@ class WindChart extends StatelessWidget {
     ),
   ];
 
-  const WindChart({super.key});
+  WindChart({super.key});
 
   // SubscriberChart({required this.data});
 
@@ -54,25 +54,24 @@ class WindChart extends StatelessWidget {
   Widget build(BuildContext context) {
     List<charts.Series<SubscriberSeries, String>> series = [
       charts.Series(
-        id: "Subscribers",
-        data: data,
-        domainFn: (SubscriberSeries series, _) => series.year,
-        measureFn: (SubscriberSeries series, _) => series.subscribers,
-        colorFn: (SubscriberSeries series, _) => series.barColor
-      )
+          id: "Subscribers",
+          data: data,
+          domainFn: (SubscriberSeries series, _) => series.year,
+          measureFn: (SubscriberSeries series, _) => series.subscribers,
+          colorFn: (SubscriberSeries series, _) => series.barColor)
     ];
 
     return Container(
       height: 70,
-      color:const Color.fromARGB(255, 106, 93, 128),
+      color: const Color.fromARGB(255, 106, 93, 128),
       margin: const EdgeInsets.all(00),
       padding: const EdgeInsets.all(0.0),
       alignment: Alignment.bottomCenter,
       child: charts.BarChart(
-        series, 
+        series,
         animate: true,
         primaryMeasureAxis:
-          const charts.NumericAxisSpec(renderSpec: charts.NoneRenderSpec()),
+            const charts.NumericAxisSpec(renderSpec: charts.NoneRenderSpec()),
 
         /// This is an OrdinalAxisSpec to match up with BarChart's default
         /// ordinal domain axis (use NumericAxisSpec or DateTimeAxisSpec for
@@ -82,7 +81,7 @@ class WindChart extends StatelessWidget {
             showAxisLine: false,
             // But don't draw anything else.
             renderSpec: charts.NoneRenderSpec()),
-        ),
+      ),
     );
   }
 }

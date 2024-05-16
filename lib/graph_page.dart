@@ -17,110 +17,117 @@ class GraphPage extends StatelessWidget {
     // double height = MediaQuery.of(context).size.height;
 
     // materialApp with debugbanner false
-    return MaterialApp( 
+    return MaterialApp(
       // theme of the app
-      // theme: ThemeData(primarySwatch: Colors.green), 
+      // theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
       // scaffold with app
-      home: Scaffold( 
-        body: Stack(
-          children: <Widget>[
-            const Background(),
-            const HoursBar(),
-            Padding(
-              padding: EdgeInsets.only(left: 0.05 * width),
-              child: Container(
-                alignment: const Alignment(0, -0.9),
-                child: const Row(
-                  children: <Widget>[
-                    DefaultTextStyleExample(fontsize: 40, boldBool: true, input: "tonight")
-                  ],
-                ),
+      home: Scaffold(
+        body: Stack(children: <Widget>[
+          const Background(),
+          const HoursBar(),
+          Padding(
+            padding: EdgeInsets.only(left: 0.05 * width),
+            child: Container(
+              alignment: const Alignment(0, -0.9),
+              child: const Row(
+                children: <Widget>[
+                  DefaultTextStyleExample(
+                      fontsize: 40, boldBool: true, input: "tonight")
+                ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(0.05 * width),
-              child: Container(
-                alignment: const Alignment(0, -0.5),
-                child: const Row(
-                  children: <Widget>[
-                    Icon(WeatherIcons.wind, color: Colors.grey,),
-                    SizedBox(width: 10),
-                    DefaultTextStyleExample(input: "stargazing index")
-                  ],
-                ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(0.05 * width),
+            child: Container(
+              alignment: const Alignment(0, -0.5),
+              child: const Row(
+                children: <Widget>[
+                  Icon(
+                    WeatherIcons.wind,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(width: 10),
+                  DefaultTextStyleExample(input: "stargazing index")
+                ],
               ),
             ),
-            Padding(
+          ),
+          Padding(
               padding: EdgeInsets.only(left: 0.05 * width, right: 0.05 * width),
               child: const Align(
                 alignment: Alignment(0, -0.3),
                 child: StargazingChart(),
-              )
-            ),
-            Padding(
-              padding: EdgeInsets.all(0.05 * width),
-              child: Container(
-                alignment: const Alignment(0, -0.1),
-                child: const Row(
-                  children: <Widget>[
-                    Icon(WeatherIcons.moon_1, color: Colors.grey,),
-                    SizedBox(width: 10),
-                    DefaultTextStyleExample(input: "moonlight")
-                  ],
-                ),
+              )),
+          Padding(
+            padding: EdgeInsets.all(0.05 * width),
+            child: Container(
+              alignment: const Alignment(0, -0.1),
+              child: const Row(
+                children: <Widget>[
+                  Icon(
+                    WeatherIcons.moon_1,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(width: 10),
+                  DefaultTextStyleExample(input: "moonlight")
+                ],
               ),
             ),
-            Padding(
+          ),
+          Padding(
               padding: EdgeInsets.only(left: 0.05 * width, right: 0.05 * width),
               child: const Align(
                 alignment: Alignment(0, 0.1),
                 child: MoonlightChart(),
-              )
-            ),
-            Padding(
-              padding: EdgeInsets.all(0.05 * width),
-              child: Container(
-                alignment: const Alignment(0, 0.3),
-                child: const Row(
-                  children: <Widget>[
-                    Icon(WeatherIcons.wind, color: Colors.grey,),
-                    SizedBox(width: 10),
-                    DefaultTextStyleExample(input: "wind speed (kph)")
-                  ],
-                ),
+              )),
+          Padding(
+            padding: EdgeInsets.all(0.05 * width),
+            child: Container(
+              alignment: const Alignment(0, 0.3),
+              child: const Row(
+                children: <Widget>[
+                  Icon(
+                    WeatherIcons.wind,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(width: 10),
+                  DefaultTextStyleExample(input: "wind speed (kph)")
+                ],
               ),
             ),
-            Padding(
+          ),
+          Padding(
               padding: EdgeInsets.only(left: 0.05 * width, right: 0.05 * width),
               child: const Align(
                 alignment: Alignment(0, 0.5),
                 child: WindChart(),
-              )
-            ),
-            Padding(
-              padding: EdgeInsets.all(0.05 * width),
-              child: Container(
-                alignment: const Alignment(0, 0.7),
-                child: const Row(
-                  children: <Widget>[
-                    Icon(WeatherIcons.lamp, color: Colors.grey,),
-                    SizedBox(width: 10),
-                    DefaultTextStyleExample(input: "light pollution (%)")
-                  ],
-                ),
+              )),
+          Padding(
+            padding: EdgeInsets.all(0.05 * width),
+            child: Container(
+              alignment: const Alignment(0, 0.7),
+              child: const Row(
+                children: <Widget>[
+                  Icon(
+                    WeatherIcons.lamp,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(width: 10),
+                  DefaultTextStyleExample(input: "light pollution (%)")
+                ],
               ),
             ),
-            Padding(
+          ),
+          Padding(
               padding: EdgeInsets.only(left: 0.05 * width, right: 0.05 * width),
               child: const Align(
                 alignment: Alignment(0, 0.92),
                 child: LightChart(),
-              )
-            ),
-          ]
-        ),
+              )),
+        ]),
       ),
-      );
+    );
   }
 }
