@@ -6,7 +6,6 @@ import 'package:skyspy/glowing_icon.dart';
 import 'package:skyspy/home.dart';
 import 'package:skyspy/maps.dart';
 import 'package:skyspy/widgets.dart';
-import 'package:skyspy/widgets2.dart';
 
 class TopPages extends StatefulWidget {
   const TopPages({super.key});
