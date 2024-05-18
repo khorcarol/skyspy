@@ -7,62 +7,62 @@ class StargazingChart extends StatelessWidget {
     SubscriberSeries(
       year: "2008",
       subscribers: 2,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),
     ),
     SubscriberSeries(
       year: "2009",
       subscribers: 4,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),
     ),
     SubscriberSeries(
       year: "2010",
       subscribers: 5,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2011",
       subscribers: 7,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2012",
       subscribers: 10,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2013",
       subscribers: 8,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2014",
       subscribers: 5,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2015",
       subscribers: 9,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2016",
       subscribers: 9,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2017",
       subscribers: 4,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2018",
       subscribers: 3,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2019",
       subscribers: 1,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
   ];
 
@@ -83,7 +83,7 @@ class StargazingChart extends StatelessWidget {
 
     return Container(
       height: 95,
-      color:Color.fromARGB(255, 86, 78, 121),
+      color:const Color.fromARGB(255, 86, 78, 121),
       margin: const EdgeInsets.all(00),
       padding: const EdgeInsets.all(0.0),
       alignment: Alignment.bottomCenter,

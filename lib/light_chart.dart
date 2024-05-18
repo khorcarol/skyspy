@@ -7,62 +7,62 @@ class LightChart extends StatelessWidget {
     SubscriberSeries(
       year: "2008",
       subscribers: 2,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),
     ),
     SubscriberSeries(
       year: "2009",
       subscribers: 4,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),
     ),
     SubscriberSeries(
       year: "2010",
       subscribers: 4,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2011",
       subscribers: 3,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2012",
       subscribers: 3,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2013",
       subscribers: 2,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2014",
       subscribers: 2,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2015",
       subscribers: 3,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2016",
       subscribers: 4,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2017",
       subscribers: 4,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2018",
       subscribers: 4,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
     SubscriberSeries(
       year: "2019",
       subscribers: 5,
-      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      barColor: charts.ColorUtil.fromDartColor(const Color.fromARGB(255, 186, 183, 195)),    
       ),
   ];
   
