@@ -6,47 +6,67 @@ class LightChart extends StatelessWidget {
   final List<SubscriberSeries> data = [
     SubscriberSeries(
       year: "2008",
-      subscribers: 10000000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
+      subscribers: 2,
+      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),
     ),
     SubscriberSeries(
       year: "2009",
-      subscribers: 11000000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
+      subscribers: 4,
+      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),
     ),
     SubscriberSeries(
       year: "2010",
-      subscribers: 12000000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
+      subscribers: 4,
+      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      ),
     SubscriberSeries(
       year: "2011",
-      subscribers: 10000000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
+      subscribers: 3,
+      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      ),
     SubscriberSeries(
       year: "2012",
-      subscribers: 8500000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
+      subscribers: 3,
+      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      ),
     SubscriberSeries(
       year: "2013",
-      subscribers: 7700000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
+      subscribers: 2,
+      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      ),
     SubscriberSeries(
       year: "2014",
-      subscribers: 7600000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
-    ),
+      subscribers: 2,
+      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      ),
     SubscriberSeries(
       year: "2015",
-      subscribers: 5500000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.red),
-    ),
+      subscribers: 3,
+      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      ),
+    SubscriberSeries(
+      year: "2016",
+      subscribers: 4,
+      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      ),
+    SubscriberSeries(
+      year: "2017",
+      subscribers: 4,
+      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      ),
+    SubscriberSeries(
+      year: "2018",
+      subscribers: 4,
+      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      ),
+    SubscriberSeries(
+      year: "2019",
+      subscribers: 5,
+      barColor: charts.ColorUtil.fromDartColor(Color.fromARGB(255, 186, 183, 195)),    
+      ),
   ];
-
-  LightChart({super.key});
+  
+   LightChart({super.key});
 
   // SubscriberChart({required this.data});
 
@@ -54,24 +74,24 @@ class LightChart extends StatelessWidget {
   Widget build(BuildContext context) {
     List<charts.Series<SubscriberSeries, String>> series = [
       charts.Series(
-          id: "Subscribers",
-          data: data,
-          domainFn: (SubscriberSeries series, _) => series.year,
-          measureFn: (SubscriberSeries series, _) => series.subscribers,
-          colorFn: (SubscriberSeries series, _) => series.barColor)
+        id: "Subscribers",
+        data: data,
+        domainFn: (SubscriberSeries series, _) => series.year,
+        measureFn: (SubscriberSeries series, _) => series.subscribers,
+        colorFn: (SubscriberSeries series, _) => series.barColor)
     ];
 
     return Container(
-      height: 70,
-      color: const Color.fromARGB(255, 106, 93, 128),
+      height: 95,
+      color:const Color.fromARGB(255, 86, 78, 121),
       margin: const EdgeInsets.all(00),
       padding: const EdgeInsets.all(0.0),
       alignment: Alignment.bottomCenter,
       child: charts.BarChart(
-        series,
+        series, 
         animate: true,
         primaryMeasureAxis:
-            const charts.NumericAxisSpec(renderSpec: charts.NoneRenderSpec()),
+          const charts.NumericAxisSpec(renderSpec: charts.NoneRenderSpec()),
 
         /// This is an OrdinalAxisSpec to match up with BarChart's default
         /// ordinal domain axis (use NumericAxisSpec or DateTimeAxisSpec for
@@ -81,7 +101,7 @@ class LightChart extends StatelessWidget {
             showAxisLine: false,
             // But don't draw anything else.
             renderSpec: charts.NoneRenderSpec()),
-      ),
+        ),
     );
   }
 }

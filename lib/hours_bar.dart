@@ -20,7 +20,23 @@ class HoursBar extends StatelessWidget {
             alignment: Alignment.center,
             child: const FittedBox(
               fit: BoxFit.fill,
-              child: Text('    19   20   21   22   23   0   1   2   3   4   5   6   7    ')
+              child: Wrap(
+                spacing: 17.3,
+                children: [
+                  Text('19'),
+                  Text('20'),
+                  Text('21'),
+                  Text('22'),
+                  Text('23'),
+                  Text('0 '),
+                  Text('1 '),
+                  Text('2 '),
+                  Text('3 '),
+                  Text('4 '),
+                  Text('5 '),
+                  Text('6 '),
+                ],
+              )
             )
           )
         ),
