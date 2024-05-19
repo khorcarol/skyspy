@@ -21,6 +21,7 @@ class WeatherData extends ChangeNotifier {
   String key = "e43370b37615967700311d81c1fbc5e4";
   late WeatherFactory ws;
   Weather? data;
+  int stargazingIndex = 0;
 
   WeatherData() {
     ws = WeatherFactory(key);
@@ -29,6 +30,7 @@ class WeatherData extends ChangeNotifier {
   
   void queryWeather() async {
     data = await ws.currentWeatherByLocation(55, 0); // TODO: change coords
+    stargazingIndex = (100 / data!.cloudiness!).toInt();
     notifyListeners();
   }
 }

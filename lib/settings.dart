@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:skyspy/glowing_icon.dart';
-import 'location_search.dart'; // Import the modified SearchBarApp
+import 'package:skyspy/app_state.dart';
+
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:map_location_picker/map_location_picker.dart';
 
 class CustomSwitchCard extends StatelessWidget {
   final String title;
@@ -68,8 +72,11 @@ class CustomSwitchCard extends StatelessWidget {
   }
 }
 
-class SettingsPage extends StatefulWidget {
-  const SettingsPage({super.key});
+class SwitchExample extends StatefulWidget {
+  final bool switchValue;
+  final Function(bool)? onChanged;
+
+  const SwitchExample({super.key, required this.switchValue, this.onChanged});
 
   @override
   _SettingsPageState createState() => _SettingsPageState();

@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  Provider.of<WeatherData>(context).data?.tempMax?.celsius?.toInt().toString() ?? "...",
+                  Provider.of<WeatherData>(context).stargazingIndex.toString(),
                   style: const TextStyle(
                     color: Color.fromRGBO(255, 255, 255, 0.6),
                     fontSize: 70,
