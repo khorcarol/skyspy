@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:skyspy/glowing_icon.dart';
-import 'package:skyspy/app_state.dart';
 import 'location_search.dart'; // Import the modified SearchBarApp
 
 class CustomSwitchCard extends StatelessWidget {
@@ -28,9 +26,8 @@ class CustomSwitchCard extends StatelessWidget {
           padding: const EdgeInsets.all(30),
           child: Column(
             children: [
-              Align(
-                  alignment: Alignment.topRight,
-                  child: SwitchExample()),
+              const Align(
+                  alignment: Alignment.topRight, child: SwitchExample()),
               Align(
                 alignment: Alignment.topLeft,
                 child: FittedBox(
@@ -116,6 +113,7 @@ class SettingsPage extends StatelessWidget {
             const Padding(
                 padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
                 child: Text("settings", style: TextStyle(fontSize: 50))),
+            SearchBarApp(controller: searchController),
             CustomSwitchCard(
               title: 'red light mode',
               description: 'Less impact on vision adaptation to the dark',
@@ -148,7 +146,7 @@ class SettingsPage extends StatelessWidget {
                 // Handle switch value changes here
               },
             ),
-            SearchBarApp(controller: searchController), // Include SearchBar
+            // Include SearchBar
           ],
         ),
       ),

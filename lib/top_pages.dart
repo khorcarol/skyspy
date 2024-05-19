@@ -3,9 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:skyspy/app_state.dart';
 
 import 'package:skyspy/glowing_icon.dart';
-import 'package:skyspy/home.dart';
 import 'package:skyspy/home_day.dart';
-import 'package:skyspy/home_lowvisibility.dart';
 import 'package:skyspy/maps.dart';
 import 'package:skyspy/widgets.dart';
 

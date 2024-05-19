@@ -10,7 +10,7 @@ class SearchBarApp extends StatefulWidget {
 }
 
 class _SearchBarAppState extends State<SearchBarApp> {
-  bool isDark = false;
+  bool isDark = true;
 
   @override
   Widget build(BuildContext context) {
