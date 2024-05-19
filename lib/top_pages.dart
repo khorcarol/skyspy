@@ -4,6 +4,8 @@ import 'package:skyspy/main.dart';
 
 import 'package:skyspy/glowing_icon.dart';
 import 'package:skyspy/home.dart';
+import 'package:skyspy/home_day.dart';
+import 'package:skyspy/home_lowvisibility.dart';
 import 'package:skyspy/maps.dart';
 import 'package:skyspy/widgets.dart';
 
@@ -41,7 +43,7 @@ class _TopPagesState extends State<TopPages> with TickerProviderStateMixin {
           onPageChanged: _handlePageViewChanged,
           children: <Widget>[
             const WidgetPage(),
-            const HomePage(),
+            const HomeDayPage(), //change this for which page
             const MapPage()
           ]),
       Align(

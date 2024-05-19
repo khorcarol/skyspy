@@ -15,6 +15,8 @@ class CustomSwitchCard extends StatelessWidget {
     required this.onChanged,
   });
 
+  
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,11 +29,7 @@ class CustomSwitchCard extends StatelessWidget {
             children: [
               Align(
                   alignment: Alignment.topRight,
-                  child: Switch(
-                    value: switchValue,
-                    onChanged: onChanged,
-                    activeColor: Colors.deepPurple,
-                  )),
+                  child: SwitchExample()),
               Align(
                 alignment: Alignment.topLeft,
                 child: FittedBox(
@@ -63,6 +61,32 @@ class CustomSwitchCard extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class SwitchExample extends StatefulWidget {
+  const SwitchExample({super.key});
+
+  @override
+  State<SwitchExample> createState() => _SwitchExampleState();
+}
+
+class _SwitchExampleState extends State<SwitchExample> {
+  bool light = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      // This bool value toggles the switch.
+      value: light,
+      activeColor: Colors.deepPurpleAccent,
+      onChanged: (bool value) {
+        // This is called when the user toggles the switch.
+        setState(() {
+          light = value;
+        });
+      },
     );
   }
 }
