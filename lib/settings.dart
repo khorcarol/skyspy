@@ -3,9 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:skyspy/glowing_icon.dart';
 import 'package:skyspy/app_state.dart';
 
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:map_location_picker/map_location_picker.dart';
-
 class CustomSwitchCard extends StatelessWidget {
   final String title;
   final String description;
@@ -32,11 +29,8 @@ class CustomSwitchCard extends StatelessWidget {
             children: [
               Align(
                   alignment: Alignment.topRight,
-                  child: Switch(
-                    value: switchValue,
-                    onChanged: onChanged,
-                    activeColor: Colors.deepPurple,
-                  )),
+                  child: SwitchExample(
+                      switchValue: switchValue, onChanged: onChanged)),
               Align(
                 alignment: Alignment.topLeft,
                 child: FittedBox(
@@ -79,24 +73,34 @@ class SwitchExample extends StatefulWidget {
   const SwitchExample({super.key, required this.switchValue, this.onChanged});
 
   @override
-  _SettingsPageState createState() => _SettingsPageState();
+  State<SwitchExample> createState() =>
+      _SwitchExampleState(switchValue: switchValue, onChanged: onChanged);
 }
 
-class _SettingsPageState extends State<SettingsPage> {
-  bool isDarkMode = false;
-  late SearchController searchController;
+class _SwitchExampleState extends State<SwitchExample> {
+  bool switchValue;
+  final Function(bool)? onChanged;
+  _SwitchExampleState({required this.switchValue, required this.onChanged});
 
   @override
-  void initState() {
-    super.initState();
-    searchController = SearchController();
+  Widget build(BuildContext context) {
+    return Switch(
+      // This bool value toggles the switch.
+      value: switchValue,
+      activeColor: Colors.deepPurpleAccent,
+      onChanged: (bool value) {
+        // This is called when the user toggles the switch.
+        setState(() {
+          switchValue = value;
+        });
+        onChanged!(value);
+      },
+    );
   }
+}
 
-  void toggleDarkMode() {
-    setState(() {
-      isDarkMode = !isDarkMode;
-    });
-  }
+class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +125,8 @@ class _SettingsPageState extends State<SettingsPage> {
               description: 'Less impact on vision adaptation to the dark',
               switchValue: Provider.of<AppSettings>(context).redMode,
               onChanged: (bool value) {
-                Provider.of<AppSettings>(context, listen: false).redMode = value;
+                Provider.of<AppSettings>(context, listen: false).redMode =
+                    value;
               },
             ),
             CustomSwitchCard(
@@ -132,10 +137,21 @@ class _SettingsPageState extends State<SettingsPage> {
                 // Handle switch value changes here
               },
             ),
-
           ],
         ),
       ),
-    );
+      Positioned(
+        top: 50.0,
+        right: 20.0,
+        child: Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: IconButton(
+                icon: const GlowingIcon(icon: Icons.arrow_back_outlined),
+                iconSize: 36.0,
+                onPressed: () {
+                  Navigator.pop(context);
+                })),
+      )
+    ]));
   }
 }
