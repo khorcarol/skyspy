@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:skyspy/main.dart';
+import 'package:skyspy/app_state.dart';
 
 import 'package:skyspy/glowing_icon.dart';
 import 'package:skyspy/home.dart';

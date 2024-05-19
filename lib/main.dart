@@ -1,8 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:weather/weather.dart';
 
+import 'package:skyspy/app_state.dart';
 import 'package:skyspy/vertical_pages.dart';
 import 'package:skyspy/settings.dart';
 import 'package:skyspy/glowing_icon.dart';
@@ -71,37 +71,7 @@ void main() {
           home: const MyApp())));
 }
 
-class AppSettings extends ChangeNotifier {
-  bool _redMode = false;
-  bool get redMode => _redMode;
-  set redMode(bool value) {
-    if (_redMode != value) {
-      _redMode = value;
-      notifyListeners();
-    }
-  }
 
-  void toggleRedMode() {
-    _redMode = !_redMode;
-    notifyListeners();
-  }
-}
-
-class WeatherData extends ChangeNotifier {
-  String key = "e43370b37615967700311d81c1fbc5e4";
-  late WeatherFactory ws;
-  Weather? data;
-
-  WeatherData() {
-    ws = WeatherFactory(key);
-    queryWeather();
-  }
-  
-  void queryWeather() async {
-    data = await ws.currentWeatherByLocation(55, 0); // TODO: change coords
-    notifyListeners();
-  }
-}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
