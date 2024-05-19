@@ -29,7 +29,7 @@ class CustomSwitchCard extends StatelessWidget {
             children: [
               Align(
                   alignment: Alignment.topRight,
-                  child: SwitchExample()),
+                  child: SwitchExample(switchValue: switchValue, onChanged: onChanged)),
               Align(
                 alignment: Alignment.topLeft,
                 child: FittedBox(
@@ -66,27 +66,32 @@ class CustomSwitchCard extends StatelessWidget {
 }
 
 class SwitchExample extends StatefulWidget {
-  const SwitchExample({super.key});
+  final bool switchValue;
+  final Function(bool)? onChanged;
+
+  const SwitchExample({super.key, required this.switchValue, this.onChanged});
 
   @override
-  State<SwitchExample> createState() => _SwitchExampleState();
+  State<SwitchExample> createState() => _SwitchExampleState(switchValue: switchValue, onChanged: onChanged);
 }
 
 class _SwitchExampleState extends State<SwitchExample> {
-  bool light = false;
+  bool switchValue;
+  final Function(bool)? onChanged;
+  _SwitchExampleState({required this.switchValue, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
     return Switch(
       // This bool value toggles the switch.
-      value: light,
+      value: switchValue,
       activeColor: Colors.deepPurpleAccent,
       onChanged: (bool value) {
         // This is called when the user toggles the switch.
         setState(() {
-          light = value;
-          print("test2");
+          switchValue = value;
         });
+        onChanged!(value);
       },
     );
   }
@@ -116,11 +121,9 @@ class SettingsPage extends StatelessWidget {
             CustomSwitchCard(
               title: 'red light mode',
               description: 'Less impact on vision adaptation to the dark',
-              switchValue: true,
+              switchValue: Provider.of<AppSettings>(context).redMode,
               onChanged: (bool value) {
-                // Handle switch value changes here
-
-                print("test");
+                Provider.of<AppSettings>(context, listen: false).redMode = value;
               },
             ),
             CustomSwitchCard(
@@ -134,14 +137,6 @@ class SettingsPage extends StatelessWidget {
             CustomSwitchCard(
               title: 'location',
               description: 'set for accurate information',
-              switchValue: true,
-              onChanged: (bool value) {
-                // Handle switch value changes here
-              },
-            ),
-            CustomSwitchCard(
-              title: 'test',
-              description: 'ingr',
               switchValue: true,
               onChanged: (bool value) {
                 // Handle switch value changes here
