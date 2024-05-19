@@ -3,6 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:skyspy/glowing_icon.dart';
 import 'package:skyspy/app_state.dart';
 
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:map_location_picker/map_location_picker.dart';
+
 class CustomSwitchCard extends StatelessWidget {
   final String title;
   final String description;
@@ -138,9 +141,7 @@ class SettingsPage extends StatelessWidget {
               title: 'location',
               description: 'set for accurate information',
               switchValue: true,
-              onChanged: (bool value) {
-                // Handle switch value changes here
-              },
+              onChanged: (bool value) {}
             ),
           ],
         ),
