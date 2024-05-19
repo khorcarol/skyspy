@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class DefaultTextStyleExample extends StatelessWidget {
   // const DefaultTextStyleExample({super.key});
