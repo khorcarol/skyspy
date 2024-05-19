@@ -1,35 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:skyspy/app_state.dart';
 
 class WidgetPage extends StatelessWidget {
   const WidgetPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Stack(
+    return Stack(
       alignment: Alignment.center,
       children: [
-        FractionallySizedBox(
+        const FractionallySizedBox(
           widthFactor: 1.0,
           heightFactor: 1.0,
           child: Image(
               image: AssetImage('images/widget_background.png'),
               fit: BoxFit.cover),
         ),
-        Positioned(
+        const Positioned(
           top: 100,
           left: 50,
           child: InfoBox(
               icon: Icons.water_drop_rounded,
-              title: 'rain',
-              reading: 'reading1'),
+              title: 'rainfall',
+              reading: "49%"),
         ),
-        Positioned(
+        const Positioned(
           top: 240,
           right: 50,
           child: InfoBox(
             icon: Icons.visibility,
             title: 'transparency',
-            reading: 'reading2',
+            reading: "26%",
           ),
         ),
         Positioned(
@@ -38,7 +40,7 @@ class WidgetPage extends StatelessWidget {
           child: InfoBox(
             icon: Icons.air,
             title: 'wind speed',
-            reading: 'reading3',
+            reading: "${Provider.of<WeatherData>(context).data?.windSpeed?.toInt().toString() ?? "..."}m/s",
           ),
         ),
         Positioned(
@@ -47,7 +49,7 @@ class WidgetPage extends StatelessWidget {
           child: InfoBox(
             icon: Icons.opacity,
             title: 'humidity',
-            reading: 'reading4',
+            reading: "${Provider.of<WeatherData>(context).data?.humidity?.toInt().toString() ?? "..."}%",
           ),
         ),
       ],

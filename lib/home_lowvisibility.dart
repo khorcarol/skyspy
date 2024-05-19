@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:skyspy/main.dart';
+import 'package:skyspy/app_state.dart';
 
 class HomeDayLowPage extends StatelessWidget {
   const HomeDayLowPage({super.key});
