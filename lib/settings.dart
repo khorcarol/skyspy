@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:skyspy/glowing_icon.dart';
+import 'package:skyspy/app_state.dart';
+import 'location_search.dart'; // Import the modified SearchBarApp
 
 class CustomSwitchCard extends StatelessWidget {
   final String title;
@@ -27,11 +30,7 @@ class CustomSwitchCard extends StatelessWidget {
             children: [
               Align(
                   alignment: Alignment.topRight,
-                  child: Switch(
-                    value: switchValue,
-                    onChanged: onChanged,
-                    activeColor: Colors.deepPurple,
-                  )),
+                  child: SwitchExample()),
               Align(
                 alignment: Alignment.topLeft,
                 child: FittedBox(
@@ -67,80 +66,104 @@ class CustomSwitchCard extends StatelessWidget {
   }
 }
 
+class SwitchExample extends StatefulWidget {
+  const SwitchExample({super.key});
+
+  @override
+  State<SwitchExample> createState() => _SwitchExampleState();
+}
+
+class _SwitchExampleState extends State<SwitchExample> {
+  bool light = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      // This bool value toggles the switch.
+      value: light,
+      activeColor: Colors.deepPurpleAccent,
+      onChanged: (bool value) {
+        // This is called when the user toggles the switch.
+        setState(() {
+          light = value;
+          print("test2");
+        });
+      },
+    );
+  }
+}
+
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SearchController searchController = SearchController();
+
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                Color.fromRGBO(78, 48, 98, 1),
-                Color.fromRGBO(36, 30, 75, 1),
-              ])),
-            child: ListView(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
-                  child: Text("settings", style: TextStyle(fontSize: 50))
-                ),
-                CustomSwitchCard(
-                  title: 'red light mode',
-                  description: 'Less impact on vision adaptation to the dark',
-                  switchValue: true,
-                  onChanged: (bool value) {
-                    // Handle switch value changes here
-                  },
-                ),
-                CustomSwitchCard(
-                  title: 'dark mode',
-                  description: 'customise the app appearance',
-                  switchValue: true,
-                  onChanged: (bool value) {
-                    // Handle switch value changes here
-                  },
-                ),
-                CustomSwitchCard(
-                  title: 'location',
-                  description: 'set for accurate information',
-                  switchValue: true,
-                  onChanged: (bool value) {
-                    // Handle switch value changes here
-                  },
-                ),
-                CustomSwitchCard(
-                  title: 'test',
-                  description: 'ingr',
-                  switchValue: true,
-                  onChanged: (bool value) {
-                    // Handle switch value changes here
-                  },
-                ),
-              ],
+        body: Stack(children: <Widget>[
+      Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+              Color.fromRGBO(78, 48, 98, 1),
+              Color.fromRGBO(36, 30, 75, 1),
+            ])),
+        child: ListView(
+          children: [
+            const Padding(
+                padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                child: Text("settings", style: TextStyle(fontSize: 50))),
+            CustomSwitchCard(
+              title: 'red light mode',
+              description: 'Less impact on vision adaptation to the dark',
+              switchValue: true,
+              onChanged: (bool value) {
+                // Handle switch value changes here
+              },
             ),
-          ),
-          Positioned(
-            top: 50.0,
-            right: 20.0,
-            child: Padding(
-              padding: const EdgeInsets.all(0.0),
-              child: IconButton(
+            CustomSwitchCard(
+              title: 'dark mode',
+              description: 'customise the app appearance',
+              switchValue: true,
+              onChanged: (bool value) {
+                // Handle switch value changes here
+              },
+            ),
+            CustomSwitchCard(
+              title: 'location',
+              description: 'set for accurate information',
+              switchValue: true,
+              onChanged: (bool value) {
+                // Handle switch value changes here
+              },
+            ),
+            CustomSwitchCard(
+              title: 'test',
+              description: 'ingr',
+              switchValue: true,
+              onChanged: (bool value) {
+                // Handle switch value changes here
+              },
+            ),
+            SearchBarApp(controller: searchController), // Include SearchBar
+          ],
+        ),
+      ),
+      Positioned(
+        top: 50.0,
+        right: 20.0,
+        child: Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: IconButton(
                 icon: const GlowingIcon(icon: Icons.arrow_back_outlined),
                 iconSize: 36.0,
                 onPressed: () {
                   Navigator.pop(context);
-                }
-              )
-            ),
-          )
-        ]
+                })),
       )
-    );
+    ]));
   }
 }
