@@ -95,8 +95,6 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SearchController searchController = SearchController();
-
     return Scaffold(
         body: Stack(children: <Widget>[
       Container(
@@ -113,7 +111,6 @@ class SettingsPage extends StatelessWidget {
             const Padding(
                 padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
                 child: Text("settings", style: TextStyle(fontSize: 50))),
-            SearchBarApp(controller: searchController),
             CustomSwitchCard(
               title: 'red light mode',
               description: 'Less impact on vision adaptation to the dark',
