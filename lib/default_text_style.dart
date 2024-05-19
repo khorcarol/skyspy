@@ -15,6 +15,7 @@ class DefaultTextStyleExample extends StatelessWidget {
 
     return DefaultTextStyle(
       style: TextStyle(
+        color: Colors.white,
         fontSize: fontsize,
         fontWeight: (boldBool) ? FontWeight.bold : FontWeight.normal
       ),
