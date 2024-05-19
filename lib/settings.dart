@@ -3,9 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:skyspy/glowing_icon.dart';
 import 'package:skyspy/app_state.dart';
 
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:map_location_picker/map_location_picker.dart';
-
 class CustomSwitchCard extends StatelessWidget {
   final String title;
   final String description;
@@ -32,7 +29,8 @@ class CustomSwitchCard extends StatelessWidget {
             children: [
               Align(
                   alignment: Alignment.topRight,
-                  child: SwitchExample(switchValue: switchValue, onChanged: onChanged)),
+                  child: SwitchExample(
+                      switchValue: switchValue, onChanged: onChanged)),
               Align(
                 alignment: Alignment.topLeft,
                 child: FittedBox(
@@ -75,7 +73,8 @@ class SwitchExample extends StatefulWidget {
   const SwitchExample({super.key, required this.switchValue, this.onChanged});
 
   @override
-  State<SwitchExample> createState() => _SwitchExampleState(switchValue: switchValue, onChanged: onChanged);
+  State<SwitchExample> createState() =>
+      _SwitchExampleState(switchValue: switchValue, onChanged: onChanged);
 }
 
 class _SwitchExampleState extends State<SwitchExample> {
@@ -126,7 +125,8 @@ class SettingsPage extends StatelessWidget {
               description: 'Less impact on vision adaptation to the dark',
               switchValue: Provider.of<AppSettings>(context).redMode,
               onChanged: (bool value) {
-                Provider.of<AppSettings>(context, listen: false).redMode = value;
+                Provider.of<AppSettings>(context, listen: false).redMode =
+                    value;
               },
             ),
             CustomSwitchCard(
@@ -137,7 +137,6 @@ class SettingsPage extends StatelessWidget {
                 // Handle switch value changes here
               },
             ),
-
           ],
         ),
       ),
