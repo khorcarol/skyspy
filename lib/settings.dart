@@ -26,8 +26,13 @@ class CustomSwitchCard extends StatelessWidget {
           padding: const EdgeInsets.all(30),
           child: Column(
             children: [
-              const Align(
-                  alignment: Alignment.topRight, child: SwitchExample()),
+              Align(
+                  alignment: Alignment.topRight,
+                  child: Switch(
+                    value: switchValue,
+                    onChanged: onChanged,
+                    activeColor: Colors.deepPurple,
+                  )),
               Align(
                 alignment: Alignment.topLeft,
                 child: FittedBox(
@@ -63,102 +68,102 @@ class CustomSwitchCard extends StatelessWidget {
   }
 }
 
-class SwitchExample extends StatefulWidget {
-  const SwitchExample({super.key});
-
-  @override
-  State<SwitchExample> createState() => _SwitchExampleState();
-}
-
-class _SwitchExampleState extends State<SwitchExample> {
-  bool light = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Switch(
-      // This bool value toggles the switch.
-      value: light,
-      activeColor: Colors.deepPurpleAccent,
-      onChanged: (bool value) {
-        // This is called when the user toggles the switch.
-        setState(() {
-          light = value;
-          print("test2");
-        });
-      },
-    );
-  }
-}
-
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
 
   @override
+  _SettingsPageState createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+  bool isDarkMode = false;
+  late SearchController searchController;
+
+  @override
+  void initState() {
+    super.initState();
+    searchController = SearchController();
+  }
+
+  void toggleDarkMode() {
+    setState(() {
+      isDarkMode = !isDarkMode;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Stack(children: <Widget>[
-      Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-              Color.fromRGBO(78, 48, 98, 1),
-              Color.fromRGBO(36, 30, 75, 1),
-            ])),
-        child: ListView(
-          children: [
-            const Padding(
-                padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
-                child: Text("settings", style: TextStyle(fontSize: 50))),
-            CustomSwitchCard(
-              title: 'red light mode',
-              description: 'Less impact on vision adaptation to the dark',
-              switchValue: true,
-              onChanged: (bool value) {
-                // Handle switch value changes here
-              },
+    return MaterialApp(
+      theme: isDarkMode ? ThemeData.dark() : ThemeData.light(),
+      home: Scaffold(
+        body: Stack(
+          children: <Widget>[
+            Container(
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                    Color.fromRGBO(78, 48, 98, 1),
+                    Color.fromRGBO(36, 30, 75, 1),
+                  ])),
+              child: ListView(
+                children: [
+                  const Padding(
+                      padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                      child: Text("settings", style: TextStyle(fontSize: 50))),
+                  CustomSwitchCard(
+                    title: 'red light mode',
+                    description: 'Less impact on vision adaptation to the dark',
+                    switchValue: true,
+                    onChanged: (bool value) {
+                      // Handle switch value changes here
+                    },
+                  ),
+                  CustomSwitchCard(
+                    title: 'dark mode',
+                    description: 'customise the app appearance',
+                    switchValue: isDarkMode,
+                    onChanged: (bool value) {
+                      toggleDarkMode();
+                    },
+                  ),
+                  CustomSwitchCard(
+                    title: 'location',
+                    description: 'set for accurate information',
+                    switchValue: true,
+                    onChanged: (bool value) {
+                      // Handle switch value changes here
+                    },
+                  ),
+                  CustomSwitchCard(
+                    title: 'test',
+                    description: 'ingr',
+                    switchValue: true,
+                    onChanged: (bool value) {
+                      // Handle switch value changes here
+                    },
+                  ),
+                  SearchBarApp(
+                      controller: searchController), // Include SearchBar
+                ],
+              ),
             ),
-            CustomSwitchCard(
-              title: 'dark mode',
-              description: 'customise the app appearance',
-              switchValue: true,
-              onChanged: (bool value) {
-                // Handle switch value changes here
-              },
-            ),
-            CustomSwitchCard(
-              title: 'location',
-              description: 'set for accurate information',
-              switchValue: true,
-              onChanged: (bool value) {
-                // Handle switch value changes here
-              },
-            ),
-            CustomSwitchCard(
-              title: 'test',
-              description: 'ingr',
-              switchValue: true,
-              onChanged: (bool value) {
-                // Handle switch value changes here
-              },
-            ),
-            // Include SearchBar
+            Positioned(
+              top: 50.0,
+              right: 20.0,
+              child: Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: IconButton(
+                      icon: const GlowingIcon(icon: Icons.arrow_back_outlined),
+                      iconSize: 36.0,
+                      onPressed: () {
+                        Navigator.pop(context);
+                      })),
+            )
           ],
         ),
       ),
-      Positioned(
-        top: 50.0,
-        right: 20.0,
-        child: Padding(
-            padding: const EdgeInsets.all(0.0),
-            child: IconButton(
-                icon: const GlowingIcon(icon: Icons.arrow_back_outlined),
-                iconSize: 36.0,
-                onPressed: () {
-                  Navigator.pop(context);
-                })),
-      )
-    ]));
+    );
   }
 }
