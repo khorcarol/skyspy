@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:skyspy/glowing_icon.dart';
+import 'package:skyspy/app_state.dart';
 import 'location_search.dart'; // Import the modified SearchBarApp
 
 class CustomSwitchCard extends StatelessWidget {
@@ -28,11 +30,7 @@ class CustomSwitchCard extends StatelessWidget {
             children: [
               Align(
                   alignment: Alignment.topRight,
-                  child: Switch(
-                    value: switchValue,
-                    onChanged: onChanged,
-                    activeColor: Colors.deepPurple,
-                  )),
+                  child: SwitchExample()),
               Align(
                 alignment: Alignment.topLeft,
                 child: FittedBox(
@@ -64,6 +62,33 @@ class CustomSwitchCard extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class SwitchExample extends StatefulWidget {
+  const SwitchExample({super.key});
+
+  @override
+  State<SwitchExample> createState() => _SwitchExampleState();
+}
+
+class _SwitchExampleState extends State<SwitchExample> {
+  bool light = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      // This bool value toggles the switch.
+      value: light,
+      activeColor: Colors.deepPurpleAccent,
+      onChanged: (bool value) {
+        // This is called when the user toggles the switch.
+        setState(() {
+          light = value;
+          print("test2");
+        });
+      },
     );
   }
 }
