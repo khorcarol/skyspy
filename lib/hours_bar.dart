@@ -21,8 +21,9 @@ class HoursBar extends StatelessWidget {
             child: const FittedBox(
               fit: BoxFit.fill,
               child: Wrap(
-                spacing: 17.3,
+                spacing: 11,
                 children: [
+                  Text(''),
                   Text('19'),
                   Text('20'),
                   Text('21'),
@@ -35,6 +36,7 @@ class HoursBar extends StatelessWidget {
                   Text('4 '),
                   Text('5 '),
                   Text('6 '),
+                  Text(''),
                 ],
               )
             )
