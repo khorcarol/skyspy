@@ -137,12 +137,7 @@ class SettingsPage extends StatelessWidget {
                 // Handle switch value changes here
               },
             ),
-            CustomSwitchCard(
-              title: 'location',
-              description: 'set for accurate information',
-              switchValue: true,
-              onChanged: (bool value) {}
-            ),
+
           ],
         ),
       ),
