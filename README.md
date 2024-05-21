@@ -20,17 +20,23 @@ List the key features and functionalities of your project:
 
 Follow these steps to install and run SkySpy on your system.
 
-We used the following libraries: charts_flutter, zoom_widget, weather, flutter_fonts_icons, cupertino_icons, provider. Please download the dependencies before using.
+Please download the dependencies before using.
 
 ### Prerequisites
 
 Before you begin, ensure you have the following dependencies and tools installed:
 
-- [Dependency 1](#link-to-dependency-1)
+- [charts_flutter](https://pub.dev/documentation/charts_flutter/latest/)
 
-- [Dependency 2](#link-to-dependency-2)
+- [zoom_widget](https://pub.dev/packages/zoom_widget)
 
-- [Dependency 3](#link-to-dependency-3)
+- [weather](https://pub.dev/packages/weather)
+
+- [flutter_fonts_icons](https://pub.dev/packages/flutter_font_icons/versions)
+
+- [cupertino_icons](https://pub.dev/packages/cupertino_icons)
+
+- [provider](https://pub.dev/packages/provider)
 
 ### Clone the Repository
 
