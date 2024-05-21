@@ -32,7 +32,11 @@ class CustomSwitchCard extends StatelessWidget {
             children: [
               Align(
                   alignment: Alignment.topRight,
-                  child: SwitchExample(switchValue: switchValue, onChanged: onChanged)),
+                  child: Switch(
+                    value: switchValue,
+                    onChanged: onChanged,
+                    activeColor: Colors.deepPurple,
+                  )),
               Align(
                 alignment: Alignment.topLeft,
                 child: FittedBox(
@@ -75,33 +79,24 @@ class SwitchExample extends StatefulWidget {
   const SwitchExample({super.key, required this.switchValue, this.onChanged});
 
   @override
-  State<SwitchExample> createState() => _SwitchExampleState(switchValue: switchValue, onChanged: onChanged);
+  _SettingsPageState createState() => _SettingsPageState();
 }
 
-class _SwitchExampleState extends State<SwitchExample> {
-  bool switchValue;
-  final Function(bool)? onChanged;
-  _SwitchExampleState({required this.switchValue, required this.onChanged});
+class _SettingsPageState extends State<SettingsPage> {
+  bool isDarkMode = false;
+  late SearchController searchController;
 
   @override
-  Widget build(BuildContext context) {
-    return Switch(
-      // This bool value toggles the switch.
-      value: switchValue,
-      activeColor: Colors.deepPurpleAccent,
-      onChanged: (bool value) {
-        // This is called when the user toggles the switch.
-        setState(() {
-          switchValue = value;
-        });
-        onChanged!(value);
-      },
-    );
+  void initState() {
+    super.initState();
+    searchController = SearchController();
   }
-}
 
-class SettingsPage extends StatelessWidget {
-  const SettingsPage({super.key});
+  void toggleDarkMode() {
+    setState(() {
+      isDarkMode = !isDarkMode;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -154,5 +149,77 @@ class SettingsPage extends StatelessWidget {
                 })),
       )
     ]));
+    return MaterialApp(
+      theme: isDarkMode ? ThemeData.dark() : ThemeData.light(),
+      home: Scaffold(
+        body: Stack(
+          children: <Widget>[
+            Container(
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                    Color.fromRGBO(78, 48, 98, 1),
+                    Color.fromRGBO(36, 30, 75, 1),
+                  ])),
+              child: ListView(
+                children: [
+                  const Padding(
+                      padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                      child: Text("settings", style: TextStyle(fontSize: 50))),
+                  CustomSwitchCard(
+                    title: 'red light mode',
+                    description: 'Less impact on vision adaptation to the dark',
+                    switchValue: true,
+                    onChanged: (bool value) {
+                      // Handle switch value changes here
+                    },
+                  ),
+                  CustomSwitchCard(
+                    title: 'dark mode',
+                    description: 'customise the app appearance',
+                    switchValue: isDarkMode,
+                    onChanged: (bool value) {
+                      toggleDarkMode();
+                    },
+                  ),
+                  CustomSwitchCard(
+                    title: 'location',
+                    description: 'set for accurate information',
+                    switchValue: true,
+                    onChanged: (bool value) {
+                      // Handle switch value changes here
+                    },
+                  ),
+                  CustomSwitchCard(
+                    title: 'test',
+                    description: 'ingr',
+                    switchValue: true,
+                    onChanged: (bool value) {
+                      // Handle switch value changes here
+                    },
+                  ),
+                  SearchBarApp(
+                      controller: searchController), // Include SearchBar
+                ],
+              ),
+            ),
+            Positioned(
+              top: 50.0,
+              right: 20.0,
+              child: Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: IconButton(
+                      icon: const GlowingIcon(icon: Icons.arrow_back_outlined),
+                      iconSize: 36.0,
+                      onPressed: () {
+                        Navigator.pop(context);
+                      })),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
