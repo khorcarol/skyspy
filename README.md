@@ -46,19 +46,19 @@ git clone https://github.com/m0seng/SkySpy.git
 
 cd SkySpy
 
-2. [Configuration Step 1: Describe how to configure the project, such as setting up environment variables, creating configuration files, etc.]
+2. [Install Flutter](https://docs.flutter.dev/get-started/install)
 
-3. [Configuration Step 2: If there are additional configuration steps, outline them here.]
+3. Install the required dependencies using:
 
-4. Install the required dependencies using:
-
-[package manager] install
+flutter pub get
 
 ### Build and Run
 
 1. Connect your device or start an emulator.
 
 2. To build and run the project, use the following command:
+
+flutter run -d chrome
 
 [build/run command]
 
