@@ -40,8 +40,6 @@ Before you begin, ensure you have the following dependencies and tools installed
 
 git clone https://github.com/m0seng/SkySpy.git
 
-   Replace `your-username` with your GitHub username.
-
 ### Configuration
 
 1. Change your working directory to the cloned repository:
