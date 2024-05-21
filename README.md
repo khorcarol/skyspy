@@ -90,5 +90,5 @@ We welcome contributions to ProjectName. If you would like to contribute to the 
 
 ProjectName is licensed under the [License Type](LICENSE). [Provide a link to the full license text if applicable.
 
-Thank you for choosing ProjectName! If you encounter any issues or have suggestions for improvements, please don't hesitate to [create an issue](https://github.com/your-username/ProjectName/issues) or [contribute to the project](#contributing). We look forward to your feedback and collaboration.
+Thank you for choosing SkySpy! If you encounter any issues or have suggestions for improvements, please don't hesitate to [create an issue](https://github.com/m0seng/skyspy/issues) or [contribute to the project](#contributing). We look forward to your feedback and collaboration.
 
