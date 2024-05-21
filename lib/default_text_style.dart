@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class DefaultTextStyleExample extends StatelessWidget {
   // const DefaultTextStyleExample({super.key});
@@ -15,6 +14,7 @@ class DefaultTextStyleExample extends StatelessWidget {
 
     return DefaultTextStyle(
       style: TextStyle(
+        color: Colors.white,
         fontSize: fontsize,
         fontWeight: (boldBool) ? FontWeight.bold : FontWeight.normal
       ),

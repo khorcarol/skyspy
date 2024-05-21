@@ -7,6 +7,7 @@ class HoursBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTextStyle(
       style: const TextStyle(
+        color: Colors.white,
         fontSize: 14,
         fontWeight: FontWeight.normal,
       ),
