@@ -20,7 +20,7 @@ List the key features and functionalities of your project:
 
 Follow these steps to install and run SkySpy on your system.
 
-We used the following libraries: charts_flutter,  zoom_widget, weather, flutter_fonts_icons, cupertino_icons, provider. Please download the dependencies before using.
+We used the following libraries: charts_flutter, zoom_widget, weather, flutter_fonts_icons, cupertino_icons, provider. Please download the dependencies before using.
 
 ### Prerequisites
 
@@ -36,9 +36,9 @@ Before you begin, ensure you have the following dependencies and tools installed
 
 1. Open your terminal or command prompt.
 
-2. Use the following command to clone the ProjectName repository:
+2. Use the following command to clone the SkySpy repository:
 
-git clone https://github.com/your-username/ProjectName.git
+git clone https://github.com/m0seng/SkySpy.git
 
    Replace `your-username` with your GitHub username.
 
@@ -46,7 +46,7 @@ git clone https://github.com/your-username/ProjectName.git
 
 1. Change your working directory to the cloned repository:
 
-cd ProjectName
+cd SkySpy
 
 2. [Configuration Step 1: Describe how to configure the project, such as setting up environment variables, creating configuration files, etc.]
 
@@ -74,7 +74,7 @@ This will build the project and install it on your connected device or emulator.
 
 ## Contributing
 
-We welcome contributions to ProjectName. If you would like to contribute to the development or report issues, please follow these guidelines:
+We welcome contributions to SkySpy. If you would like to contribute to the development or report issues, please follow these guidelines:
 
 1. Fork the repository.
 
@@ -88,7 +88,7 @@ We welcome contributions to ProjectName. If you would like to contribute to the 
 
 ## License
 
-ProjectName is licensed under the [License Type](LICENSE). [Provide a link to the full license text if applicable.
+SkySpy is licensed under the [License Type](LICENSE). [Provide a link to the full license text if applicable.
 
 Thank you for choosing SkySpy! If you encounter any issues or have suggestions for improvements, please don't hesitate to [create an issue](https://github.com/m0seng/skyspy/issues) or [contribute to the project](#contributing). We look forward to your feedback and collaboration.
 
