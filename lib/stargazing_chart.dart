@@ -76,22 +76,39 @@ class StargazingChart extends StatelessWidget {
       charts.Series(
         id: "Subscribers",
         data: data,
+        labelAccessorFn: (SubscriberSeries series, _) =>
+              series.subscribers.toString(),
         domainFn: (SubscriberSeries series, _) => series.year,
         measureFn: (SubscriberSeries series, _) => series.subscribers,
-        colorFn: (SubscriberSeries series, _) => series.barColor)
+        colorFn: (SubscriberSeries series, _) => series.barColor
+        ),
     ];
 
     return Container(
       height: 95,
       color:const Color.fromARGB(255, 86, 78, 121),
       margin: const EdgeInsets.all(00),
-      padding: const EdgeInsets.all(0.0),
+      padding: const EdgeInsets.only(left:10.0),
       alignment: Alignment.bottomCenter,
       child: charts.BarChart(
         series, 
-        animate: true,
-        primaryMeasureAxis:
-          const charts.NumericAxisSpec(renderSpec: charts.NoneRenderSpec()),
+        animate: false,
+        // barRendererDecorator: charts.BarLabelDecorator<String>(
+          // labelPosition: charts.BarLabelPosition.outside 
+        // ),
+        primaryMeasureAxis: charts.NumericAxisSpec(
+            tickProviderSpec: const charts.BasicNumericTickProviderSpec(
+              desiredTickCount: 3,
+            ),
+            renderSpec: charts.SmallTickRendererSpec(
+              labelStyle: charts.TextStyleSpec(
+                  fontSize: 12, // size in Pts.
+                  color: charts.MaterialPalette.gray.shadeDefault
+                  ),
+              )
+        ),
+        // primaryMeasureAxis:
+          // const charts.NumericAxisSpec(renderSpec: charts.NoneRenderSpec()),
 
         /// This is an OrdinalAxisSpec to match up with BarChart's default
         /// ordinal domain axis (use NumericAxisSpec or DateTimeAxisSpec for
@@ -100,7 +117,8 @@ class StargazingChart extends StatelessWidget {
             // Make sure that we draw the domain axis line.
             showAxisLine: false,
             // But don't draw anything else.
-            renderSpec: charts.NoneRenderSpec()),
+            renderSpec: charts.NoneRenderSpec()
+            ),
         ),
     );
   }

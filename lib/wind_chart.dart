@@ -86,14 +86,22 @@ class WindChart extends StatelessWidget {
       height: 95,
       color:const Color.fromARGB(255, 86, 78, 121),
       margin: const EdgeInsets.all(00),
-      padding: const EdgeInsets.all(0.0),
+      padding: const EdgeInsets.only(left:10.0),
       alignment: Alignment.bottomCenter,
       child: charts.BarChart(
         series, 
         animate: true,
-        primaryMeasureAxis:
-          const charts.NumericAxisSpec(renderSpec: charts.NoneRenderSpec()),
-
+        primaryMeasureAxis: charts.NumericAxisSpec(
+            tickProviderSpec: const charts.BasicNumericTickProviderSpec(
+              desiredTickCount: 3,
+            ),
+            renderSpec: charts.SmallTickRendererSpec(
+              labelStyle: charts.TextStyleSpec(
+                  fontSize: 12, // size in Pts.
+                  color: charts.MaterialPalette.gray.shadeDefault
+                  ),
+              )
+        ),
         /// This is an OrdinalAxisSpec to match up with BarChart's default
         /// ordinal domain axis (use NumericAxisSpec or DateTimeAxisSpec for
         /// other charts).

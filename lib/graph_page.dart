@@ -93,7 +93,7 @@ class GraphPage extends StatelessWidget {
                     color: Colors.grey,
                   ),
                   SizedBox(width: 10),
-                  DefaultTextStyleExample(input: "wind speed (kph)")
+                  DefaultTextStyleExample(input: "wind speed (m/s)")
                 ],
               ),
             ),
