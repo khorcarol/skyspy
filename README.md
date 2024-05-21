@@ -64,12 +64,6 @@ cd SkySpy
 
 This will build the project and install it on your connected device or emulator.
 
-## Usage
-
-1. [Usage Step 1: Provide a brief overview of how to use the project, such as user registration, logging in, or main functionalities.]
-
-2. [Usage Step 2: If the project has multiple use cases, provide additional usage instructions here.]
-
 ## Contributing
 
 We welcome contributions to SkySpy. If you would like to contribute to the development or report issues, please follow these guidelines:
