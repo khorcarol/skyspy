@@ -44,19 +44,25 @@ Before you begin, ensure you have the following dependencies and tools installed
 
 2. Use the following command to clone the SkySpy repository:
 
+'''
 git clone https://github.com/m0seng/SkySpy.git
+'''
 
 ### Configuration
 
 1. Change your working directory to the cloned repository:
 
+'''
 cd SkySpy
+'''
 
 2. [Install Flutter](https://docs.flutter.dev/get-started/install)
 
 3. Install the required dependencies using:
 
+'''
 flutter pub get
+'''
 
 ### Build and Run
 
@@ -64,7 +70,9 @@ flutter pub get
 
 2. To build and run the project, use the following command:
 
+'''
 flutter run -d chrome
+'''
 
 [build/run command]
 
