@@ -7,6 +7,8 @@ import 'package:skyspy/weather_icons_icons.dart';
 import 'package:skyspy/background.dart';
 import 'package:skyspy/hours_bar.dart';
 import 'package:skyspy/default_text_style.dart';
+import 'package:provider/provider.dart';
+import 'package:skyspy/app_state.dart';
 
 class GraphPage extends StatelessWidget {
   const GraphPage({super.key});
@@ -30,10 +32,17 @@ class GraphPage extends StatelessWidget {
             padding: EdgeInsets.only(left: 0.05 * width),
             child: Container(
               alignment: const Alignment(0, -0.9),
-              child: const Row(
+              child: Row(
                 children: <Widget>[
-                  DefaultTextStyleExample(
-                      fontsize: 40, boldBool: true, input: "tonight")
+                  const DefaultTextStyleExample(
+                      fontsize: 40, boldBool: true, input: "tonight  "),
+                  Padding(
+                    padding: EdgeInsets.only(top: 12.0),
+                    child: DefaultTextStyleExample(
+                      fontsize: 20, boldBool: true,
+                      input: Provider.of<WeatherData>(context).dateString
+                    )
+                  )
                 ],
               ),
             ),
