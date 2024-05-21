@@ -74,8 +74,6 @@ flutter pub get
 flutter run -d chrome
 ```
 
-[build/run command]
-
 This will build the project and install it on your connected device or emulator.
 
 ## Contributing
