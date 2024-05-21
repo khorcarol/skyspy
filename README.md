@@ -86,7 +86,7 @@ We welcome contributions to SkySpy. If you would like to contribute to the devel
 
 ## License
 
-SkySpy is licensed under the [License Type](LICENSE). [Provide a link to the full license text if applicable.
+SkySpy is licensed under the [Apache 2.0 License](LICENSE). [Provide a link to the full license text if applicable.
 
 Thank you for choosing SkySpy! If you encounter any issues or have suggestions for improvements, please don't hesitate to [create an issue](https://github.com/m0seng/skyspy/issues) or [contribute to the project](#contributing). We look forward to your feedback and collaboration.
 
