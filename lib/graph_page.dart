@@ -37,7 +37,7 @@ class GraphPage extends StatelessWidget {
                   const DefaultTextStyleExample(
                       fontsize: 40, boldBool: true, input: "tonight  "),
                   Padding(
-                    padding: EdgeInsets.only(top: 12.0),
+                    padding: const EdgeInsets.only(top: 12.0),
                     child: DefaultTextStyleExample(
                       fontsize: 20, boldBool: true,
                       input: Provider.of<WeatherData>(context).dateString
