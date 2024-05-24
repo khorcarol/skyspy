@@ -807,17 +807,10 @@ packages:
     dependency: transitive
     description:
       name: xdg_directories
-<<<<<<< HEAD
-      sha256: bd512f03919aac5f1313eb8249f223bacf4927031bf60b02601f81f687689e86
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.0+3"
-=======
       sha256: faea9dee56b520b55a566385b84f2e8de55e7496104adada9962e0bd11bcff1d
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
->>>>>>> 6277a21e5f52528562b543802d4878ebc7c4a021
   xml:
     dependency: transitive
     description:
