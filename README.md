@@ -2,10 +2,14 @@
 
 SkySpy is a stargazing weather app designed for amateur stargazers]. This guide will provide you with everything you need to know to get started with the project, from installation instructions to a detailed description of its features.
 
+
+![alt text](/public/images-images-0.jpg)
+![alt text](/public/images-images-1.jpg)
+![alt text](/public/images-images-2.jpg)
+![alt text](/public/images-images-3.jpg)
+![alt text](/public/images-images-4.jpg)
+
 ## Features
-
-List the key features and functionalities of your project:
-
 - Page 1: Home Page
 
 - Page 2: Settings Page
